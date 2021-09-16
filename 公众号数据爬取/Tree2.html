@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tree树状图2</title>
+    <!-- 引入echarts库文件 -->
+    <script src="../static_js/echarts.min.js"></script>
+    <!-- 引入jquery库文件 -->
+    <script src="../static_js/jquery.js" type="text/javascript"></script>
+    <link rel="import" href="search2.html" id="pagesearch"/>
+    <!--    数据列表-->
+    <script src="./js/testcode.js" type="text/javascript" charset="utf-8"></script>
+    <!--    搜索功能-->
+    <script src="./js/search2.js" type="text/javascript" charset="utf-8"></script>
+    <!--    链接外部CSS样式表-->
+    <link rel="stylesheet" href="./CSS/mystyle2.css" />
+
+
+</head>
+<body>
+<!--搜索框区域-->
+<div class="search">
+    <input type="text" id="search_text" />
+    <div id="auto_div">
+    </div>
+    <input type="button" id="bt1" value="点击确认" />
+
+    <script type="text/javascript">
+        /* 搜索的函数 */
+        document.getElementById('bt1').onclick = function (){
+            var search_text = $("#search_text").val();
+            alert(search_text)
+        };
+
+    </script>
+
+</div>
+
+
+
+<!-- 定义图表现实区域 -->
+<div id="main" style="width:1200px; height: 600px"></div>
+
+<script type="text/javascript">
+    <!-- 初始化echarts对象 -->
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    myChart.showLoading();
+    $.get('./data/test_novalue.json', function (data) {
+        myChart.hideLoading();
+
+        data.children.forEach(function (datum, index) {
+            index % 2 === 0 && (datum.collapsed = true);
+        });
+
+        myChart.setOption(option = {
+            tooltip: {
+                trigger: 'item',
+                triggerOn: 'mousemove'
+            },
+            series: [
+                {
+                    type: 'tree',
+
+                    data: [data],
+
+                    top: '1%',
+                    left: '7%',
+                    bottom: '1%',
+                    right: '20%',
+
+                    symbolSize: 7,
+
+                    label: {
+                        position: 'left',
+                        verticalAlign: 'middle',
+                        align: 'right',
+                        fontSize: 9
+                    },
+
+                    leaves: {
+                        label: {
+                            position: 'right',
+                            verticalAlign: 'middle',
+                            align: 'left'
+                        }
+                    },
+
+                    emphasis: {
+                        focus: 'descendant'
+                    },
+
+                    expandAndCollapse: true,
+                    animationDuration: 550,
+                    animationDurationUpdate: 750
+                }
+            ]
+        });
+    });
+
+    option && myChart.setOption(option);
+
+
+    //
+    // // 点击事件的实现
+    // myChart.on('click', function(params){
+    //     // alert(params.name)
+    //     if (params.componentType === 'series'){
+    //         if(params.seriesType === 'tree'){
+    //             //查找数字
+    //             var patt = /\((\d+)\)/g;
+    //             params.name.match(patt);
+    //             // 匹配括号内内容
+    //             var num = RegExp.$1;
+    //             alert(num);
+    //             // alert(params.name)
+    //             // // 成功定位到最后的社区一级
+    //             // var patt = /.会/ //模式里的中文不用加引号
+    //             // if(patt.test(params.name)){
+    //             //
+    //             //
+    //             // }
+    //
+    //         }
+    //     }
+    //
+    // });
+
+
+</script>
+
+
+</body>
+</html>

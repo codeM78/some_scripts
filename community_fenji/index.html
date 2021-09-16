@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treemap矩形树图</title>
+	<!-- 引入echarts库文件 -->
+    <script src="static/echarts.min.js"></script>
+    <!-- 引入jquery库文件 -->
+    <script src="static/jquery.js"></script>
+
+
+</head>
+<body>
+	<!-- 定义图表现实区域 -->
+    <div id="main" style="width:1000px; height: 450px"></div>
+	<script type="text/javascript">
+		<!-- 初始化echarts对象 -->
+        var app = {};
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom)
+        var option;
+
+        myChart.showLoading();
+        // jQuery请求 这里的json数据要求是三级 ZhengzhouData是形参，前边路径是真实参数
+        $.get('files/data_test.json', function (ZhengzhouData) {
+            myChart.hideLoading();
+
+            function colorMappingChange(value) {
+                var levelOption = getLevelOption(value);
+                chart.setOption({
+                    series: [{
+                        levels: levelOption
+                    }]
+                });
+            }
+
+            var formatUtil = echarts.format;
+
+            function getLevelOption() {
+                return [
+                    {
+                        itemStyle: {
+                            borderColor: '#777',
+                            borderWidth: 0,
+                            gapWidth: 1
+                        },
+                        upperLabel: {
+                            show: false
+                        }
+                    },
+                    {
+                        itemStyle: {
+                            borderColor: '#555',
+                            borderWidth: 5,
+                            gapWidth: 1
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                borderColor: '#ddd'
+                            }
+                        }
+                    },
+                    {
+                        colorSaturation: [0.35, 0.5],
+                        itemStyle: {
+                            borderWidth: 5,
+                            gapWidth: 1,
+                            borderColorSaturation: 0.6
+                        }
+                    }
+                ];
+            }
+
+            myChart.setOption(option = {
+
+                title: {
+                    text: '郑州市',
+                    left: 'center'
+                },
+
+                tooltip: {
+                    formatter: function (info) {
+                        var value = info.value;
+                        var treePathInfo = info.treePathInfo;
+                        var treePath = [];
+
+                        for (var i = 1; i < treePathInfo.length; i++) {
+                            treePath.push(treePathInfo[i].name);
+                        }
+
+                        return [
+                            '<div class="tooltip-title">' + formatUtil.encodeHTML(treePath.join('/')) + '</div>',
+                            '人口数量: '+ formatUtil.addCommas(value),
+                        ].join('');
+                    }
+                },
+
+                series: [
+                    {
+                        name: '郑州市',
+                        type: 'treemap',
+                        visibleMin: 300,
+                        label: {
+                            show: true,
+                            formatter: '{b}'
+                        },
+                        upperLabel: {
+                            show: true,
+                            height: 30
+                        },
+                        itemStyle: {
+                            borderColor: '#fff'
+                        },
+                        levels: getLevelOption(),
+                        data: ZhengzhouData
+                    }
+                ]
+            });
+        });
+
+        option && myChart.setOption(option);
+
+        // 跳转事件的实现
+        myChart.on('click', function(params){
+            // alert(params.name)
+            if (params.componentType === 'series'){
+                if(params.seriesType === 'treemap'){
+                    // alert(params.value)
+                    // alert(params.name)
+                    // 成功定位到最后的社区一级
+                    var patt = /.会/ //模式里的中文不用加引号
+                    if(patt.test(params.name)){
+                        //延时效果
+                        setTimeout(function (){
+                            // alert('跳转至：' + params.name + '--详细信息。');
+                            // 成功跳转到指定页面
+                            window.location.href = './next/treemap-simple (1).html';
+                        }, 1000)
+
+
+                    }
+
+                }
+            }
+
+        });
+		
+	</script>
+</body>
+</html>

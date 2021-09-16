@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tree树状图2</title>
+    <!-- 引入echarts库文件 -->
+    <script src="../static_js/echarts.min.js"></script>
+    <!-- 引入jquery库文件 -->
+    <script src="../static_js/jquery.js" type="text/javascript"></script>
+    <!--    数据列表-->
+    <script src="./js/testcode.js" type="text/javascript" charset="utf-8"></script>
+    <!--    搜索功能-->
+    <script src="./js/search2.js" type="text/javascript" charset="utf-8"></script>
+    <!--    链接外部CSS样式表-->
+<!--    <link rel="stylesheet" type="text/css" href="./CSS/mystyle2.css" />-->
+
+
+</head>
+<body>
+<!--搜索框区域-->
+<div class="search">
+    <input type="text" id="search_text" placeholder="输入MCC即可获取相应信息..." style="width: 200px"/>
+    <div id="auto_div">
+    </div>
+<!--    <div id="div_jiansuo" style="position: absolute">-->
+<!--        <input type="button" id="bt1" value="确认检索" />-->
+<!--    </div>-->
+
+
+    <script type="text/javascript">
+        /* 搜索的函数 */
+        document.getElementById('bt1').onclick = function (){
+            var search_text = $("#search_text").val();
+            alert(search_text)
+        };
+
+    </script>
+
+</div>
+
+
+
+<!-- 定义图表现实区域 -->
+<div id="main" style=" height: 5000px; width: 1200px"></div>
+
+<script type="text/javascript">
+    <!-- 初始化echarts对象 -->
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    myChart.showLoading();
+
+    myChart.hideLoading();
+    data = {"name": "国家地区—运营商", "children": [{"name": "希腊", "children": [{"name": "Cosmote(20201)"}, {"name": "Vodafone GR(20205)"}, {"name": "TELESTET(20210)"}, {"name": "TELE Greenland(29001)"}]}, {"name": "荷兰", "children": [{"name": "Vodafone NL(20404)"}, {"name": "KPN(20408)"}, {"name": "O2 - NL(20412)"}, {"name": "Ben(20416)"}, {"name": "dutchtone(20420)"}]}, {"name": "比利时", "children": [{"name": "Proximus(20601)"}, {"name": "Mobistar(20610)"}, {"name": "Orange(20620)"}]}, {"name": "法国", "children": [{"name": "Orange(20801)"}, {"name": "SFR(20810)"}, {"name": "BOUYGTEL(20820)"}]}, {"name": "安道尔共和国", "children": [{"name": "Mobiland(21303)"}]}, {"name": "西班牙", "children": [{"name": "Vodafone E(21401)"}, {"name": "MoviStar(21402)"}, {"name": "AMENA(21403)"}, {"name": "Xfera(21404)"}, {"name": "MoviStar(21407)"}]}, {"name": "匈牙利", "children": [{"name": "Pannon GSM(21601)"}, {"name": "Westel(21630)"}, {"name": "Vodafone(21670)"}]}, {"name": "南斯拉夫", "children": [{"name": "MOBTEL(22001)"}, {"name": "ProMonte(22002)"}, {"name": "Telekom Srbija(22003)"}, {"name": "MONET(22004)"}]}, {"name": "意大利", "children": [{"name": "TIM(22201)"}, {"name": "Vodafone IT(22210)"}, {"name": "WIND(22288)"}, {"name": "Blu SpA(22298)"}]}, {"name": "罗马尼亚", "children": [{"name": "CONNEX(22601)"}, {"name": "Cosmorom(22603)"}, {"name": "dialog(22610)"}]}, {"name": "瑞士", "children": [{"name": "Swiss GSM(22801)"}, {"name": "sunrise(22802)"}, {"name": "Orange(22803)"}]}, {"name": "捷克", "children": [{"name": "PAEGAS(23001)"}, {"name": "EUROTEL(23002)"}, {"name": "OSKAR(23003)"}]}, {"name": "斯洛伐克", "children": [{"name": "GLOBTEL(23101)"}, {"name": "EUROTEL(23102)"}]}, {"name": "奥地利", "children": [{"name": "A1(23201)"}, {"name": "T-Mobile(23203)"}, {"name": "ONE(23205)"}, {"name": "tele.ring(23207)"}]}, {"name": "英国", "children": [{"name": "O2 - UK(23410)"}, {"name": "Vodafone(23415)"}, {"name": "T-Mobile UK(23430)"}, {"name": "T-Mobile UK(23431)"}, {"name": "T-Mobile UK(23432)"}, {"name": "Orange(23433)"}, {"name": "JT GSM(23450)"}, {"name": "GUERNSEY TEL(23455)"}, {"name": "MANX(23458)"}]}, {"name": "丹麦", "children": [{"name": "TDK-MOBIL(23801)"}, {"name": "SONOFON(23802)"}, {"name": "Telia(23820)"}, {"name": "Orange(23830)"}]}, {"name": "瑞典", "children": [{"name": "Telia S(24001)"}, {"name": "IQ(24007)"}, {"name": "Vodafone(24008)"}]}, {"name": "挪威", "children": [{"name": "TELENOR(24201)"}, {"name": "NetCom(24202)"}]}, {"name": "芬兰", "children": [{"name": "Telia(24403)"}, {"name": "RADIOLINJA(24405)"}, {"name": "FINNET(24409)"}, {"name": "2G(24412)"}, {"name": "AMT(24414)"}, {"name": "SONERA(24491)"}]}, {"name": "立陶宛", "children": [{"name": "OMNITEL(24601)"}, {"name": "Bite GSM(24602)"}, {"name": "TELE2(24603)"}]}, {"name": "拉脱维亚", "children": [{"name": "LMT GSM(24701)"}, {"name": "BALTCOM(24702)"}]}, {"name": "爱沙尼亚", "children": [{"name": "EMT GSM(24801)"}, {"name": "RLE(24802)"}, {"name": "Q GSM(24803)"}]}, {"name": "俄罗斯", "children": [{"name": "MTS(25001)"}, {"name": "NorthWest GSM(25002)"}, {"name": "NCC(25003)"}, {"name": "SCS(25005)"}, {"name": "SMARTS(25007)"}, {"name": "DTC(25010)"}, {"name": "Orensot(25011)"}, {"name": "Far East(25012)"}, {"name": "Kuban GSM(25013)"}, {"name": "NTC(25016)"}, {"name": "Ermak RMS(25017)"}, {"name": "EXTEL(25028)"}, {"name": "Uraltel(25039)"}, {"name": "NC-GSM(25044)"}, {"name": "Sonic Duo(25091)"}, {"name": "Primtel(25092)"}, {"name": "JSC Telecom XXI(25093)"}, {"name": "Bee Line(25099)"}]}, {"name": "乌克兰", "children": [{"name": "UMC(25501)"}, {"name": "WellCOM(25502)"}, {"name": "Kyivstar(25503)"}, {"name": "Golden Telecom(25505)"}]}, {"name": "白俄罗斯", "children": [{"name": "VELCOM(25701)"}]}, {"name": "摩尔多瓦", "children": [{"name": "VOXTEL(25901)"}, {"name": "MOLDCELL(25902)"}]}, {"name": "波兰", "children": [{"name": "Plus GSM(26001)"}, {"name": "Era GSM(26002)"}, {"name": "IDEA(26003)"}]}, {"name": "德国", "children": [{"name": "T-Mobile(26201)"}, {"name": "Vodafone D2(26202)"}, {"name": "E-Plus(26203)"}, {"name": "O2 - DE(26207)"}, {"name": "Mobilcom(26213)"}]}, {"name": "直布罗陀", "children": [{"name": "GIBTEL(26601)"}]}, {"name": "葡萄牙", "children": [{"name": "Vodafone(26801)"}, {"name": "OPTIMUS(26803)"}, {"name": "TMN(26806)"}]}, {"name": "卢森堡", "children": [{"name": "LUXGSM(27001)"}, {"name": "TANGO(27077)"}]}, {"name": "爱尔兰", "children": [{"name": "Vodafone IRL(27201)"}, {"name": "O2 - IRL(27202)"}, {"name": "METEOR(27203)"}]}, {"name": "冰岛", "children": [{"name": "SIMINN(27401)"}, {"name": "TAL(27402)"}, {"name": "Viking(27404)"}]}, {"name": "阿尔巴尼亚", "children": [{"name": "AMC(27601)"}, {"name": "Vodafone(27602)"}]}, {"name": "马耳他", "children": [{"name": "Vodafone Malta(27801)"}, {"name": "go mobile(27821)"}]}, {"name": "塞浦路斯", "children": [{"name": "CYTAGSM(28001)"}]}, {"name": "格鲁吉亚", "children": [{"name": "GEOCELL(28201)"}, {"name": "Magti GSM(28202)"}, {"name": "GEO 03(28203)"}]}, {"name": "亚美尼亚", "children": [{"name": "ARMGSM(28301)"}]}, {"name": "保加利亚", "children": [{"name": "M-TEL GSM(28401)"}]}, {"name": "土耳其", "children": [{"name": "TURKCELL(28601)"}, {"name": "TELSIM(28602)"}, {"name": "ARIA(28603)"}, {"name": "AYCELL(28604)"}]}, {"name": "斯洛文尼亚", "children": [{"name": "SI.MOBIL(29340)"}, {"name": "MOBITEL(29341)"}]}, {"name": "列支敦士登", "children": [{"name": "TELECOM(29501)"}, {"name": "MONTEL(29502)"}, {"name": "FL1(29505)"}, {"name": "LI TANGO(29577)"}]}, {"name": "加拿大", "children": [{"name": "Microcell(30237)"}, {"name": "Rogers AT&T(30272)"}]}, {"name": "美国", "children": [{"name": "Cellnet(31001)"}, {"name": "Wireless 2000(31011)"}, {"name": "Cingular(31015)"}, {"name": "T-Mobile(31016)"}, {"name": "Cingular(31017)"}, {"name": "Cingular(31018)"}, {"name": "T-Mobile(31020)"}, {"name": "T-Mobile(31021)"}, {"name": "T-Mobile(31022)"}, {"name": "T-Mobile(31023)"}, {"name": "T-Mobile(31024)"}, {"name": "T-Mobile(31025)"}, {"name": "T-Mobile(31026)"}, {"name": "T-Mobile(31027)"}, {"name": "T-Mobile(31031)"}, {"name": "WestLink(31034)"}, {"name": "Carolina(31035)"}, {"name": "AT&T Wireless(31038)"}, {"name": "Cingular(31041)"}, {"name": "TMP Corp(31046)"}, {"name": "T-Mobile(31058)"}, {"name": "Epic Touch(31061)"}, {"name": "AmeriLink(31063)"}, {"name": "Einstein PCS(31064)"}, {"name": "T-Mobile(31066)"}, {"name": "Wireless 2000(31067)"}, {"name": "NPI Wireless(31068)"}, {"name": "Conestoga(31069)"}, {"name": "Telemetrix(31074)"}, {"name": "PTSI(31076)"}, {"name": "Iowa Wireless(31077)"}, {"name": "Airlink PCS(31078)"}, {"name": "PinPoint(31079)"}, {"name": "T-Mobile(31080)"}, {"name": "AWS(31098)"}]}, {"name": "牙买加", "children": [{"name": "Digicel(33805)"}]}, {"name": "安提瓜和巴布达", "children": [{"name": "APUA PCS(34430)"}]}, {"name": "百慕大群岛", "children": [{"name": "Telecom(35001)"}]}, {"name": "古巴", "children": [{"name": "C_Com(36801)"}]}, {"name": "多米尼加共和国", "children": [{"name": "Orange(37001)"}]}, {"name": "阿塞拜疆", "children": [{"name": "AZERCELL GSM(40001)"}, {"name": "BAKCELL GSM 2000(40002)"}]}, {"name": "哈萨克斯坦", "children": [{"name": "K-MOBILE(40101)"}, {"name": "K'CELL(40102)"}]}, {"name": "印度", "children": [{"name": "Hutch(40401)"}, {"name": "Airtel(40402)"}, {"name": "Airtel(40403)"}, {"name": "IDEA(40404)"}, {"name": "Hutch(40405)"}, {"name": "IDEA(40407)"}, {"name": "Reliance(40409)"}, {"name": "Airtel(40410)"}, {"name": "Hutch(40411)"}, {"name": "IDEA(40412)"}, {"name": "Hutch(40413)"}, {"name": "Spice(40414)"}, {"name": "Hutch(40415)"}, {"name": "Airtel(40416)"}, {"name": "Reliance(40418)"}, {"name": "IDEA(40419)"}, {"name": "Hutch(40420)"}, {"name": "BPL Mobile(40421)"}, {"name": "IDEA(40422)"}, {"name": "IDEA(40424)"}, {"name": "Hutch(40427)"}, {"name": "Aircel(40429)"}, {"name": "Hutch(40430)"}, {"name": "Airtel(40431)"}, {"name": "Cellone(40434)"}, {"name": "Reliance(40436)"}, {"name": "Aircel(40437)"}, {"name": "Cellone(40438)"}, {"name": "Airtel(40440)"}, {"name": "RPG(40441)"}, {"name": "Hutch(40443)"}, {"name": "Spice(40444)"}, {"name": "Airtel(40445)"}, {"name": "Hutch(40446)"}, {"name": "Airtel(40449)"}, {"name": "Reliance(40450)"}, {"name": "Cellone(40451)"}, {"name": "Reliance(40452)"}, {"name": "Cellone(40453)"}, {"name": "Cellone(40454)"}, {"name": "Cellone(40455)"}, {"name": "IDEA(40456)"}, {"name": "Cellone(40457)"}, {"name": "Cellone(40458)"}, {"name": "Cellone(40459)"}, {"name": "Hutch(40460)"}, {"name": "Cellone(40462)"}, {"name": "Cellone(40464)"}, {"name": "Cellone(40466)"}, {"name": "Reliance(40467)"}, {"name": "DOLPHIN(40468)"}, {"name": "MTNL(40469)"}, {"name": "Airtel(40470)"}, {"name": "Cellone(40471)"}, {"name": "Cellone(40472)"}, {"name": "Cellone(40473)"}, {"name": "Cellone(40474)"}, {"name": "Cellone(40475)"}, {"name": "Cellone(40476)"}, {"name": "Cellone(40477)"}, {"name": "IDEA(40478)"}, {"name": "Cellone(40479)"}, {"name": "Cellone(40480)"}, {"name": "Cellone(40481)"}, {"name": "IDEA(40482)"}, {"name": "Reliance(40483)"}, {"name": "Hutch(40484)"}, {"name": "Reliance(40485)"}, {"name": "Hutch(40486)"}, {"name": "IDEA(40487)"}, {"name": "Hutch(40488)"}, {"name": "IDEA(40489)"}, {"name": "Airtel(40490)"}, {"name": "Airtel(40492)"}, {"name": "Airtel(40493)"}, {"name": "Airtel(40494)"}, {"name": "Airtel(40495)"}, {"name": "Airtel(40496)"}, {"name": "Airtel(40497)"}, {"name": "Airtel(40498)"}, {"name": "Airtel(40551)"}, {"name": "Airtel(40552)"}, {"name": "Airtel(40553)"}, {"name": "Airtel(40554)"}, {"name": "Airtel(40555)"}, {"name": "Airtel(40556)"}, {"name": "Hutch(40566)"}, {"name": "Hutch(40567)"}]}, {"name": "巴基斯坦", "children": [{"name": "Mobilink(41001)"}]}, {"name": "斯里兰卡", "children": [{"name": "DIALOG(41302)"}, {"name": "CELLTEL(41303)"}]}, {"name": "缅甸", "children": [{"name": "MM 900(41401)"}]}, {"name": "黎巴嫩", "children": [{"name": "Cellis(41501)"}, {"name": "LibanCell(41503)"}]}, {"name": "约旦", "children": [{"name": "Fastlink(41601)"}, {"name": "MobileCom(41677)"}]}, {"name": "叙利亚", "children": [{"name": "Spacetel(41702)"}, {"name": "MOBILE SYRIA(41709)"}]}, {"name": "科威特", "children": [{"name": "MTCNet(41902)"}, {"name": "WATANIYA(41903)"}]}, {"name": "沙特阿拉伯", "children": [{"name": "Al-Jawal(42001)"}, {"name": "EAE(42007)"}]}, {"name": "也门", "children": [{"name": "Spacetel(42102)"}]}, {"name": "阿曼", "children": [{"name": "OMAN MOBILE(42202)"}]}, {"name": "阿拉伯联合酋长国", "children": [{"name": "ETISALAT(42402)"}]}, {"name": "以色列", "children": [{"name": "Orange(42501)"}, {"name": "JAWWAL(42505)"}]}, {"name": "巴林", "children": [{"name": "MOBILE PLUS(42601)"}]}, {"name": "卡塔尔", "children": [{"name": "QATARNET(42701)"}]}, {"name": "蒙古", "children": [{"name": "MobiCom(42899)"}]}, {"name": "尼泊尔", "children": [{"name": "NTC(42901)"}]}, {"name": "伊朗", "children": [{"name": "TCI(43211)"}, {"name": "KISH(43214)"}]}, {"name": "乌兹别克斯坦", "children": [{"name": "Buztel(43401)"}, {"name": "Uzmacom(43402)"}, {"name": "UZB DAEWOO-GSM(43404)"}, {"name": "Coscom(43405)"}]}, {"name": "吉尔吉斯坦", "children": [{"name": "BITEL(43701)"}]}, {"name": "土库曼斯坦", "children": [{"name": "BCTI(43801)"}]}, {"name": "越南", "children": [{"name": "MOBIFONE(45201)"}, {"name": "VINAFONE(45202)"}]}, {"name": "香港", "children": [{"name": "CSL(45400)"}, {"name": "NEW WORLD(45401)"}, {"name": "CSL(45402)"}, {"name": "Orange(45404)"}, {"name": "SMC(45406)"}, {"name": "NEW WORLD(45410)"}, {"name": "PEOPLES(45412)"}, {"name": "SUNDAY(45416)"}, {"name": "HK TELECOM(45418)"}]}, {"name": "柬埔寨", "children": [{"name": "MobiTel(45601)"}, {"name": "SAMART-GSM(45602)"}]}, {"name": "老挝", "children": [{"name": "LAO GSM(45701)"}]}, {"name": "中国", "children": [{"name": "CHINA MOBILE(46000)"}, {"name": "CHN-CUGSM(46001)"}, {"name": "CHINA MOBILE(46002)"}, {"name": "CHINA TELECOM(46003)"}]}, {"name": "台湾省", "children": [{"name": "Far EasTone(46601)"}, {"name": "TUNTEX(46606)"}, {"name": "ACeS(46668)"}, {"name": "KGT(46688)"}, {"name": "Chunghwa(46692)"}, {"name": "MobiTai(46693)"}, {"name": "TWN GSM(46697)"}, {"name": "TransAsia(46699)"}]}, {"name": "孟加拉国", "children": [{"name": "GrameemPhone(47001)"}, {"name": "AKTEL(47002)"}, {"name": "ShebaWorld(47003)"}, {"name": "Mobile 2000(47019)"}]}, {"name": "马尔代夫", "children": [{"name": "DHIMOBILE(47201)"}]}, {"name": "马来西亚", "children": [{"name": "Maxis Mobile(50212)"}, {"name": "TM Touch(50213)"}, {"name": "DiGi(50216)"}, {"name": "ADAM(50217)"}, {"name": "CELCOM(50219)"}]}, {"name": "澳大利亚", "children": [{"name": "MobileNet(50501)"}, {"name": "OPTUS(50502)"}, {"name": "Vodafone(50503)"}, {"name": "One.Tel(50508)"}]}, {"name": "印度尼西亚", "children": [{"name": "ACeS(51000)"}, {"name": "SATELINDOCEL(51001)"}, {"name": "LIPPO TEL(51008)"}, {"name": "TELKOMSEL(51010)"}, {"name": "GSM-XL(51011)"}, {"name": "INDOSAT(51021)"}]}, {"name": "菲律宾", "children": [{"name": "ISLACOM(51501)"}, {"name": "Globe(51502)"}, {"name": "SMART(51503)"}, {"name": "Digitel(51505)"}, {"name": "ACeS(51511)"}]}, {"name": "泰国", "children": [{"name": "AIS GSM(52001)"}, {"name": "ACT Mobile(52015)"}, {"name": "WP-1800(52018)"}, {"name": "ACeS(52020)"}, {"name": "HELLO(52023)"}, {"name": "Orange(52099)"}]}, {"name": "新加坡", "children": [{"name": "ST-GSM-SGP(52501)"}, {"name": "ST-GSM1800-SGP(52502)"}, {"name": "M1-GSM-SGP(52503)"}, {"name": "SGP-M1-3GSM(52504)"}, {"name": "STARHUB-SGP(52505)"}]}, {"name": "文莱", "children": [{"name": "BRU TSTCom(52811)"}]}, {"name": "新西兰", "children": [{"name": "Vodafone(53001)"}]}, {"name": "汤加", "children": [{"name": "Tonga Comm.(53901)"}]}, {"name": "斐济", "children": [{"name": "Vodafone(54201)"}]}, {"name": "法属玻利尼西亚", "children": [{"name": "VINI(54720)"}]}, {"name": "埃及", "children": [{"name": "MobiNiL(60201)"}, {"name": "CLICK GSM(60202)"}]}, {"name": "阿尔及利亚", "children": [{"name": "AMN(60301)"}]}, {"name": "摩洛哥", "children": [{"name": "Meditel(60400)"}, {"name": "IAM(60401)"}]}, {"name": "突尼斯", "children": [{"name": "TUNICELL(60502)"}]}, {"name": "塞内加尔", "children": [{"name": "ALIZE(60801)"}, {"name": "SENTEL(60802)"}]}, {"name": "马里", "children": [{"name": "MALITEL(61001)"}]}, {"name": "几内亚", "children": [{"name": "MOBILIS(61101)"}, {"name": "LAGUI(61102)"}]}, {"name": "布基纳法索", "children": [{"name": "CELTEL(61302)"}]}, {"name": "尼日尔", "children": [{"name": "CELTEL(61402)"}]}, {"name": "多哥", "children": [{"name": "TOGOCEL(61501)"}]}, {"name": "贝宁", "children": [{"name": "LIBERCOM(61601)"}, {"name": "Telecel Benin(61602)"}, {"name": "BENINCELL(61603)"}]}, {"name": "毛里求斯", "children": [{"name": "CELLPLUS(61701)"}, {"name": "EMTEL(61710)"}]}, {"name": "利比里亚", "children": [{"name": "Omega(61801)"}]}, {"name": "加纳", "children": [{"name": "SPACEFON(62001)"}, {"name": "ONEtouch(62002)"}, {"name": "MOBITEL(62003)"}]}, {"name": "尼日利亚", "children": [{"name": "MTN(62100)"}, {"name": "ECONET(62120)"}, {"name": "MTN(62130)"}, {"name": "NITEL GSM(62140)"}]}, {"name": "乍得", "children": [{"name": "CELTEL(62201)"}, {"name": "LIBERTIS(62202)"}]}, {"name": "喀麦隆", "children": [{"name": "MTN-CAM(62401)"}, {"name": "MOBILIS(62402)"}]}, {"name": "加蓬", "children": [{"name": "LIBERTIS(62801)"}, {"name": "GO Celtel(62802)"}, {"name": "CELTEL(62803)"}]}, {"name": "刚果", "children": [{"name": "CELTEL(62901)"}, {"name": "LIBERTIS(62910)"}]}, {"name": "塞舌尔", "children": [{"name": "SEYCEL(63301)"}, {"name": "AIRTEL(63310)"}]}, {"name": "莫桑比克", "children": [{"name": "MobiTel(63401)"}]}, {"name": "埃塞俄比亚", "children": [{"name": "ETMTN(63601)"}]}, {"name": "索马里", "children": [{"name": "BARAKAAT(63701)"}]}, {"name": "肯尼亚", "children": [{"name": "Safaricom(63902)"}, {"name": "KENCELL(63903)"}]}, {"name": "坦桑尼亚", "children": [{"name": "TRITEL(64001)"}, {"name": "MobiTel(64002)"}, {"name": "ZANTEL(64003)"}, {"name": "Vodacom(64004)"}, {"name": "CELTEL(64005)"}]}, {"name": "乌干达", "children": [{"name": "CelTel(64101)"}, {"name": "MTN-UGANDA(64110)"}, {"name": "UTL TELECEL(64111)"}]}, {"name": "布隆迪", "children": [{"name": "Spacetel(64201)"}, {"name": "SAFARIS(64202)"}]}, {"name": "马达加斯加", "children": [{"name": "Madacom(64601)"}, {"name": "ANTARIS(64602)"}]}, {"name": "津巴布韦", "children": [{"name": "NET*ONE(64801)"}, {"name": "TELECEL(64803)"}, {"name": "ECONET(64804)"}]}, {"name": "阿森松", "children": [{"name": "MTC(64901)"}]}, {"name": "开曼群岛", "children": [{"name": "MTC(64901)"}]}, {"name": "科特迪瓦", "children": [{"name": "MTC(64901)"}]}, {"name": "马里亚那群岛", "children": [{"name": "MTC(64901)"}]}, {"name": "马提尼克", "children": [{"name": "MTC(64901)"}]}, {"name": "纳米比亚", "children": [{"name": "MTC(64901)"}]}, {"name": "荷属安的列斯", "children": [{"name": "MTC(64901)"}]}, {"name": "留尼旺", "children": [{"name": "MTC(64901)"}]}, {"name": "东萨摩亚(美)", "children": [{"name": "MTC(64901)"}]}, {"name": "西萨摩亚", "children": [{"name": "MTC(64901)"}]}, {"name": "马拉维", "children": [{"name": "CALLPOINT 90(65001)"}, {"name": "CelTel(65010)"}]}, {"name": "莱索托", "children": [{"name": "Vodacom(65101)"}]}, {"name": "博茨瓦纳", "children": [{"name": "MASCOM(65201)"}, {"name": "VISTA(65202)"}]}, {"name": "斯威士兰", "children": [{"name": "SwaziMTN(65310)"}]}, {"name": "南非", "children": [{"name": "Vodacom(65501)"}, {"name": "Cell C (Pty) Ltd(65507)"}, {"name": "MTN(65510)"}]}, {"name": "萨尔瓦多", "children": [{"name": "PERSONAL(70601)"}, {"name": "DIGICEL(70602)"}]}, {"name": "秘鲁", "children": [{"name": "TIM(71610)"}]}, {"name": "阿根廷", "children": [{"name": "UNIFON(72207)"}, {"name": "Telecom Personal(72234)"}, {"name": "PORT-HABLE(72235)"}]}, {"name": "巴西", "children": [{"name": "TIM BRASIL(72402)"}, {"name": "TIM BRASIL(72403)"}, {"name": "TIM BRASIL(72404)"}, {"name": "Claro(72405)"}, {"name": "BrTCel(72416)"}]}, {"name": "智利", "children": [{"name": "ENTEL PCS(73001)"}, {"name": "ENTEL PCS(73010)"}]}, {"name": "委内瑞拉", "children": [{"name": "INFONET(73401)"}, {"name": "DIGITEL(73402)"}]}, {"name": "玻利维亚", "children": [{"name": "NUEVATEL(73601)"}, {"name": "ENTEL(73602)"}]}, {"name": "巴拉圭", "children": [{"name": "VOX(74401)"}, {"name": "PY 02(74402)"}]}, {"name": "苏里南", "children": [{"name": "ICMS(74601)"}]}]}
+    data.children.forEach(function (datum, index) {
+        index % 2 === 0 && (datum.collapsed = true);
+    });
+
+    myChart.setOption(option = {
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove'
+        },
+        series: [
+            {
+                type: 'tree',
+
+                data: [data],
+
+                top: '1%',
+                left: '7%',
+                bottom: '1%',
+                right: '20%',
+
+                symbolSize: 7,
+
+                label: {
+                    position: 'left',
+                    verticalAlign: 'middle',
+                    align: 'right',
+                    fontSize: 9
+                },
+
+                leaves: {
+                    label: {
+                        position: 'right',
+                        verticalAlign: 'middle',
+                        align: 'left'
+                    }
+                },
+
+                emphasis: {
+                    focus: 'descendant'
+                },
+
+                expandAndCollapse: true,
+                animationDuration: 550,
+                animationDurationUpdate: 750
+            }
+        ]
+    });
+
+
+    option && myChart.setOption(option);
+
+    /* 搜索按钮的功能*/
+    document.getElementById('bt1').onclick = function (){
+        var search_text = $("#search_text").val();
+        // alert(search_text);
+        // 点击事件的实现
+        myChart.on('click', function(params){
+            // alert(params.name)
+            if (params.componentType === 'series'){
+                if(params.seriesType === 'tree'){
+                    //查找数字
+                    var patt = /\((\d+)\)/g;
+                    params.name.match(patt);
+                    // 匹配括号内内容
+                    var num = RegExp.$1;
+                    // alert(num);
+                    if(search_text === num){
+                        alert(params.name)
+
+                    }
+
+
+
+                }
+            }
+
+        });
+    };
+    //
+    // // 点击事件的实现
+    // myChart.on('click', function(params){
+    //     // alert(params.name)
+    //     if (params.componentType === 'series'){
+    //         if(params.seriesType === 'tree'){
+    //             //查找数字
+    //             var patt = /\((\d+)\)/g;
+    //             params.name.match(patt);
+    //             // 匹配括号内内容
+    //             var num = RegExp.$1;
+    //             alert(num);
+    //             // alert(params.name)
+    //             // // 成功定位到最后的社区一级
+    //             // var patt = /.会/ //模式里的中文不用加引号
+    //             // if(patt.test(params.name)){
+    //             //
+    //             //
+    //             // }
+    //
+    //         }
+    //     }
+    //
+    // });
+
+
+</script>
+
+
+</body>
+</html>

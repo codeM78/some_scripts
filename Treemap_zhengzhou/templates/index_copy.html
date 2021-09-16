@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试用例</title>
+	<!-- 引入echarts库文件 -->
+    <script src="../static/echarts.min.js"></script>
+    <!-- 引入jquery库文件 -->
+    <script src="../static/jquery.js"></script>
+
+
+</head>
+<body>
+	<!-- 定义图表现实区域 -->
+    <div id="main" style="width:1380px; height: 620px"></div>
+	<script type="text/javascript">
+		<!-- 初始化echarts对象 -->
+        var app = {};
+
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom)
+        var option;
+
+        myChart.showLoading();
+        // jQuery请求
+        $.get('../data/demo-test_level4.json', function (diskData) {
+            myChart.hideLoading();
+
+            function colorMappingChange(value) {
+                var levelOption = getLevelOption(value);
+                chart.setOption({
+                    series: [{
+                        levels: levelOption
+                    }]
+                });
+            }
+
+            var formatUtil = echarts.format;
+
+            function getLevelOption() {
+                return [
+                    {
+                        itemStyle: {
+                            borderColor: '#777',
+                            borderWidth: 0,
+                            gapWidth: 1
+                        },
+                        upperLabel: {
+                            show: false
+                        }
+                    },
+                    {
+                        itemStyle: {
+                            borderColor: '#555',
+                            borderWidth: 5,
+                            gapWidth: 1
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                borderColor: '#ddd'
+                            }
+                        }
+                    },
+                    {
+                        colorSaturation: [0.35, 0.5],
+                        itemStyle: {
+                            borderWidth: 5,
+                            gapWidth: 1,
+                            borderColorSaturation: 0.6
+                        }
+                    }
+                ];
+            }
+
+            myChart.setOption(option = {
+
+                title: {
+                    text: 'Zhengzhou City',
+                    left: 'center'
+                },
+
+                tooltip: {
+                    formatter: function (info) {
+                        var value = info.value;
+                        var treePathInfo = info.treePathInfo;
+                        var treePath = [];
+
+                        for (var i = 1; i < treePathInfo.length; i++) {
+                            treePath.push(treePathInfo[i].name);
+                        }
+
+                        return [
+                            '<div class="tooltip-title">' + formatUtil.encodeHTML(treePath.join('/')) + '</div>',
+                            'Disk Usage: ' + formatUtil.addCommas(value) + ' KB',
+                        ].join('');
+                    }
+                },
+
+                series: [
+                    {
+                        name: 'Zhengzhou City',
+                        type: 'treemap',
+                        visibleMin: 300,
+                        label: {
+                            show: true,
+                            formatter: '{b}'
+                        },
+                        upperLabel: {
+                            show: true,
+                            height: 30
+                        },
+                        itemStyle: {
+                            borderColor: '#fff'
+                        },
+                        levels: getLevelOption(),
+                        data: diskData
+                    }
+                ]
+            });
+        });
+
+        option && myChart.setOption(option);
+		
+	</script>
+</body>
+</html>

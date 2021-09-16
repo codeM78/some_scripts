@@ -1,0 +1,474 @@
+MCC3_MNC2,运营商,国家码,Countries and Regions,国家或地区,国际域名缩写,电话代码,时差
+20201,Cosmote,GR,Greece,希腊,GR,30,-6.0
+20205,Vodafone GR,GR,Greece,希腊,GR,30,-6.0
+20210,TELESTET,GR,Greece,希腊,GR,30,-6.0
+29001,TELE Greenland,GR,Greece,希腊,GR,30,-6.0
+20404,Vodafone NL,NL,Netherlands,荷兰,NL,31,-7.0
+20408,KPN,NL,Netherlands,荷兰,NL,31,-7.0
+20412,O2 - NL,NL,Netherlands,荷兰,NL,31,-7.0
+20416,Ben,NL,Netherlands,荷兰,NL,31,-7.0
+20420,dutchtone,NL,Netherlands,荷兰,NL,31,-7.0
+20601,Proximus,BE,Belgium,比利时,BE,32,-7.0
+20610,Mobistar,BE,Belgium,比利时,BE,32,-7.0
+20620,Orange,BE,Belgium,比利时,BE,32,-7.0
+20801,Orange,FR,France,法国,FR,33,-8.0
+20810,SFR,FR,France,法国,FR,33,-8.0
+20820,BOUYGTEL,FR,France,法国,FR,33,-8.0
+21303,Mobiland,AD,Andorra,安道尔共和国,AD,376,-8.0
+21401,Vodafone E,ES,Spain,西班牙,ES,34,-8.0
+21402,MoviStar,ES,Spain,西班牙,ES,34,-8.0
+21403,AMENA,ES,Spain,西班牙,ES,34,-8.0
+21404,Xfera,ES,Spain,西班牙,ES,34,-8.0
+21407,MoviStar,ES,Spain,西班牙,ES,34,-8.0
+21601,Pannon GSM,HU,Hungary,匈牙利,HU,36,-7.0
+21630,Westel,HU,Hungary,匈牙利,HU,36,-7.0
+21670,Vodafone,HU,Hungary,匈牙利,HU,36,-7.0
+22001,MOBTEL,YU,Yugoslavia,南斯拉夫,YU,381,-7.0
+22002,ProMonte,YU,Yugoslavia,南斯拉夫,YU,381,-7.0
+22003,Telekom Srbija,YU,Yugoslavia,南斯拉夫,YU,381,-7.0
+22004,MONET,YU,Yugoslavia,南斯拉夫,YU,381,-7.0
+22201,TIM,IT,Italy,意大利,IT,39,-7.0
+22210,Vodafone IT,IT,Italy,意大利,IT,39,-7.0
+22288,WIND,IT,Italy,意大利,IT,39,-7.0
+22298,Blu SpA,IT,Italy,意大利,IT,39,-7.0
+22601,CONNEX,RO,Romania,罗马尼亚,RO,40,-6.0
+22603,Cosmorom,RO,Romania,罗马尼亚,RO,40,-6.0
+22610,dialog,RO,Romania,罗马尼亚,RO,40,-6.0
+22801,Swiss GSM,CH,Switzerland,瑞士,CH,41,-7.0
+22802,sunrise,CH,Switzerland,瑞士,CH,41,-7.0
+22803,Orange,CH,Switzerland,瑞士,CH,41,-7.0
+23001,PAEGAS,CZ,Czech Republic,捷克,CZ,420,-7.0
+23002,EUROTEL,CZ,Czech Republic,捷克,CZ,420,-7.0
+23003,OSKAR,CZ,Czech Republic,捷克,CZ,420,-7.0
+23101,GLOBTEL,SK,Slovakia,斯洛伐克,SK,421,-7.0
+23102,EUROTEL,SK,Slovakia,斯洛伐克,SK,421,-7.0
+23201,A1,AT,Austria,奥地利,AT,43,-7.0
+23203,T-Mobile,AT,Austria,奥地利,AT,43,-7.0
+23205,ONE,AT,Austria,奥地利,AT,43,-7.0
+23207,tele.ring,AT,Austria,奥地利,AT,43,-7.0
+23410,O2 - UK,GB,United Kiongdom,英国,GB,44,-8.0
+23415,Vodafone,GB,United Kiongdom,英国,GB,44,-8.0
+23430,T-Mobile UK,GB,United Kiongdom,英国,GB,44,-8.0
+23431,T-Mobile UK,GB,United Kiongdom,英国,GB,44,-8.0
+23432,T-Mobile UK,GB,United Kiongdom,英国,GB,44,-8.0
+23433,Orange,GB,United Kiongdom,英国,GB,44,-8.0
+23450,JT GSM,GB,United Kiongdom,英国,GB,44,-8.0
+23455,GUERNSEY TEL,GB,United Kiongdom,英国,GB,44,-8.0
+23458,MANX,GB,United Kiongdom,英国,GB,44,-8.0
+23801,TDK-MOBIL,DK,Denmark,丹麦,DK,45,-7.0
+23802,SONOFON,DK,Denmark,丹麦,DK,45,-7.0
+23820,Telia,DK,Denmark,丹麦,DK,45,-7.0
+23830,Orange,DK,Denmark,丹麦,DK,45,-7.0
+24001,Telia S,SE,Sweden,瑞典,SE,46,-7.0
+24007,IQ,SE,Sweden,瑞典,SE,46,-7.0
+24008,Vodafone,SE,Sweden,瑞典,SE,46,-7.0
+24201,TELENOR,NO,Norway,挪威,NO,47,-7.0
+24202,NetCom,NO,Norway,挪威,NO,47,-7.0
+24403,Telia,FI,Finland,芬兰,FI,358,-6.0
+24405,RADIOLINJA,FI,Finland,芬兰,FI,358,-6.0
+24409,FINNET,FI,Finland,芬兰,FI,358,-6.0
+24412,2G,FI,Finland,芬兰,FI,358,-6.0
+24414,AMT,FI,Finland,芬兰,FI,358,-6.0
+24491,SONERA,FI,Finland,芬兰,FI,358,-6.0
+24601,OMNITEL,LT,Lithuania,立陶宛,LT,370,-5.0
+24602,Bite GSM,LT,Lithuania,立陶宛,LT,370,-5.0
+24603,TELE2,LT,Lithuania,立陶宛,LT,370,-5.0
+24701,LMT GSM,LV,Latvia,拉脱维亚,LV,371,-5.0
+24702,BALTCOM,LV,Latvia,拉脱维亚,LV,371,-5.0
+24801,EMT GSM,EE,Estonia,爱沙尼亚,EE,372,-5.0
+24802,RLE,EE,Estonia,爱沙尼亚,EE,372,-5.0
+24803,Q GSM,EE,Estonia,爱沙尼亚,EE,372,-5.0
+25001,MTS,RU,Russia,俄罗斯,RU,7,-5.0
+25002,NorthWest GSM,RU,Russia,俄罗斯,RU,7,-5.0
+25003,NCC,RU,Russia,俄罗斯,RU,7,-5.0
+25005,SCS,RU,Russia,俄罗斯,RU,7,-5.0
+25007,SMARTS,RU,Russia,俄罗斯,RU,7,-5.0
+25010,DTC,RU,Russia,俄罗斯,RU,7,-5.0
+25011,Orensot,RU,Russia,俄罗斯,RU,7,-5.0
+25012,Far East,RU,Russia,俄罗斯,RU,7,-5.0
+25013,Kuban GSM,RU,Russia,俄罗斯,RU,7,-5.0
+25016,NTC,RU,Russia,俄罗斯,RU,7,-5.0
+25017,Ermak RMS,RU,Russia,俄罗斯,RU,7,-5.0
+25028,EXTEL,RU,Russia,俄罗斯,RU,7,-5.0
+25039,Uraltel,RU,Russia,俄罗斯,RU,7,-5.0
+25044,NC-GSM,RU,Russia,俄罗斯,RU,7,-5.0
+25091,Sonic Duo,RU,Russia,俄罗斯,RU,7,-5.0
+25092,Primtel,RU,Russia,俄罗斯,RU,7,-5.0
+25093,JSC Telecom XXI,RU,Russia,俄罗斯,RU,7,-5.0
+25099,Bee Line,RU,Russia,俄罗斯,RU,7,-5.0
+25501,UMC,UA,Ukraine,乌克兰,UA,380,-5.0
+25502,WellCOM,UA,Ukraine,乌克兰,UA,380,-5.0
+25503,Kyivstar,UA,Ukraine,乌克兰,UA,380,-5.0
+25505,Golden Telecom,UA,Ukraine,乌克兰,UA,380,-5.0
+25701,VELCOM,BY,Belarus,白俄罗斯,BY,375,-6.0
+25901,VOXTEL,MD,Moldova Republic of,摩尔多瓦,MD,373,-5.0
+25902,MOLDCELL,MD,Moldova Republic of,摩尔多瓦,MD,373,-5.0
+26001,Plus GSM,PL,Poland,波兰,PL,48,-7.0
+26002,Era GSM,PL,Poland,波兰,PL,48,-7.0
+26003,IDEA,PL,Poland,波兰,PL,48,-7.0
+26201,T-Mobile,DE,Germany,德国,DE,49,-7.0
+26202,Vodafone D2,DE,Germany,德国,DE,49,-7.0
+26203,E-Plus,DE,Germany,德国,DE,49,-7.0
+26207,O2 - DE,DE,Germany,德国,DE,49,-7.0
+26213,Mobilcom,DE,Germany,德国,DE,49,-7.0
+26601,GIBTEL,GI,Gibraltar,直布罗陀,GI,350,-8.0
+26801,Vodafone,PT,Portugal,葡萄牙,PT,351,-8.0
+26803,OPTIMUS,PT,Portugal,葡萄牙,PT,351,-8.0
+26806,TMN,PT,Portugal,葡萄牙,PT,351,-8.0
+27001,LUXGSM,LU,Luxembourg,卢森堡,LU,352,-7.0
+27077,TANGO,LU,Luxembourg,卢森堡,LU,352,-7.0
+27201,Vodafone IRL,IE,Ireland,爱尔兰,IE,353,-4.3
+27202,O2 - IRL,IE,Ireland,爱尔兰,IE,353,-4.3
+27203,METEOR,IE,Ireland,爱尔兰,IE,353,-4.3
+27401,SIMINN,IS,Iceland,冰岛,IS,354,-9.0
+27402,TAL,IS,Iceland,冰岛,IS,354,-9.0
+27404,Viking,IS,Iceland,冰岛,IS,354,-9.0
+27601,AMC,AL,Albania,阿尔巴尼亚,AL,355,-7.0
+27602,Vodafone,AL,Albania,阿尔巴尼亚,AL,355,-7.0
+27801,Vodafone Malta,MT,Malta,马耳他,MT,356,-7.0
+27821,go mobile,MT,Malta,马耳他,MT,356,-7.0
+28001,CYTAGSM,CY,Cyprus,塞浦路斯,CY,357,-6.0
+28201,GEOCELL,GE,Georgia,格鲁吉亚,GE,995,0.0
+28202,Magti GSM,GE,Georgia,格鲁吉亚,GE,995,0.0
+28203,GEO 03,GE,Georgia,格鲁吉亚,GE,995,0.0
+28301,ARMGSM,AM,Armenia,亚美尼亚,AM,374,-6.0
+28401,M-TEL GSM,BG,Bulgaria,保加利亚,BG,359,-6.0
+28601,TURKCELL,TR,Turkey,土耳其,TR,90,-6.0
+28602,TELSIM,TR,Turkey,土耳其,TR,90,-6.0
+28603,ARIA,TR,Turkey,土耳其,TR,90,-6.0
+28604,AYCELL,TR,Turkey,土耳其,TR,90,-6.0
+29340,SI.MOBIL,SI,Slovenia,斯洛文尼亚,SI,386,-7.0
+29341,MOBITEL,SI,Slovenia,斯洛文尼亚,SI,386,-7.0
+29501,TELECOM,LI,Liechtenstein,列支敦士登,LI,423,-7.0
+29502,MONTEL,LI,Liechtenstein,列支敦士登,LI,423,-7.0
+29505,FL1,LI,Liechtenstein,列支敦士登,LI,423,-7.0
+29577,LI TANGO,LI,Liechtenstein,列支敦士登,LI,423,-7.0
+30237,Microcell,CA,Canada,加拿大,CA,1,-13.0
+30272,Rogers AT&T,CA,Canada,加拿大,CA,1,-13.0
+31001,Cellnet,US,United States of America,美国,US,1,-13.0
+31011,Wireless 2000,US,United States of America,美国,US,1,-13.0
+31015,Cingular,US,United States of America,美国,US,1,-13.0
+31016,T-Mobile,US,United States of America,美国,US,1,-13.0
+31017,Cingular,US,United States of America,美国,US,1,-13.0
+31018,Cingular,US,United States of America,美国,US,1,-13.0
+31020,T-Mobile,US,United States of America,美国,US,1,-13.0
+31021,T-Mobile,US,United States of America,美国,US,1,-13.0
+31022,T-Mobile,US,United States of America,美国,US,1,-13.0
+31023,T-Mobile,US,United States of America,美国,US,1,-13.0
+31024,T-Mobile,US,United States of America,美国,US,1,-13.0
+31025,T-Mobile,US,United States of America,美国,US,1,-13.0
+31026,T-Mobile,US,United States of America,美国,US,1,-13.0
+31027,T-Mobile,US,United States of America,美国,US,1,-13.0
+31031,T-Mobile,US,United States of America,美国,US,1,-13.0
+31034,WestLink,US,United States of America,美国,US,1,-13.0
+31035,Carolina,US,United States of America,美国,US,1,-13.0
+31038,AT&T Wireless,US,United States of America,美国,US,1,-13.0
+31041,Cingular,US,United States of America,美国,US,1,-13.0
+31046,TMP Corp,US,United States of America,美国,US,1,-13.0
+31058,T-Mobile,US,United States of America,美国,US,1,-13.0
+31061,Epic Touch,US,United States of America,美国,US,1,-13.0
+31063,AmeriLink,US,United States of America,美国,US,1,-13.0
+31064,Einstein PCS,US,United States of America,美国,US,1,-13.0
+31066,T-Mobile,US,United States of America,美国,US,1,-13.0
+31067,Wireless 2000,US,United States of America,美国,US,1,-13.0
+31068,NPI Wireless,US,United States of America,美国,US,1,-13.0
+31069,Conestoga,US,United States of America,美国,US,1,-13.0
+31074,Telemetrix,US,United States of America,美国,US,1,-13.0
+31076,PTSI,US,United States of America,美国,US,1,-13.0
+31077,Iowa Wireless,US,United States of America,美国,US,1,-13.0
+31078,Airlink PCS,US,United States of America,美国,US,1,-13.0
+31079,PinPoint,US,United States of America,美国,US,1,-13.0
+31080,T-Mobile,US,United States of America,美国,US,1,-13.0
+31098,AWS,US,United States of America,美国,US,1,-13.0
+33805,Digicel,JM,Jamaica,牙买加,JM,1876,-12.0
+34430,APUA PCS,AG,Antigua and Barbuda,安提瓜和巴布达,AG,1268,-12.0
+35001,Telecom,BM,Bermuda Is.,百慕大群岛,BM,1441,-12.0
+36801,C_Com,CU,Cuba,古巴,CU,53,-13.0
+37001,Orange,DO,Dominica Rep.,多米尼加共和国,DO,1890,-13.0
+40001,AZERCELL GSM,AZ,Azerbaijan,阿塞拜疆,AZ,994,-5.0
+40002,BAKCELL GSM 2000,AZ,Azerbaijan,阿塞拜疆,AZ,994,-5.0
+40101,K-MOBILE,KZ,Kazakstan,哈萨克斯坦,KZ,327,-5.0
+40102,K'CELL,KZ,Kazakstan,哈萨克斯坦,KZ,327,-5.0
+40401,Hutch,IN,India,印度,IN,91,-2.3
+40402,Airtel,IN,India,印度,IN,91,-2.3
+40403,Airtel,IN,India,印度,IN,91,-2.3
+40404,IDEA,IN,India,印度,IN,91,-2.3
+40405,Hutch,IN,India,印度,IN,91,-2.3
+40407,IDEA,IN,India,印度,IN,91,-2.3
+40409,Reliance,IN,India,印度,IN,91,-2.3
+40410,Airtel,IN,India,印度,IN,91,-2.3
+40411,Hutch,IN,India,印度,IN,91,-2.3
+40412,IDEA,IN,India,印度,IN,91,-2.3
+40413,Hutch,IN,India,印度,IN,91,-2.3
+40414,Spice,IN,India,印度,IN,91,-2.3
+40415,Hutch,IN,India,印度,IN,91,-2.3
+40416,Airtel,IN,India,印度,IN,91,-2.3
+40418,Reliance,IN,India,印度,IN,91,-2.3
+40419,IDEA,IN,India,印度,IN,91,-2.3
+40420,Hutch,IN,India,印度,IN,91,-2.3
+40421,BPL Mobile,IN,India,印度,IN,91,-2.3
+40422,IDEA,IN,India,印度,IN,91,-2.3
+40424,IDEA,IN,India,印度,IN,91,-2.3
+40427,Hutch,IN,India,印度,IN,91,-2.3
+40429,Aircel,IN,India,印度,IN,91,-2.3
+40430,Hutch,IN,India,印度,IN,91,-2.3
+40431,Airtel,IN,India,印度,IN,91,-2.3
+40434,Cellone,IN,India,印度,IN,91,-2.3
+40436,Reliance,IN,India,印度,IN,91,-2.3
+40437,Aircel,IN,India,印度,IN,91,-2.3
+40438,Cellone,IN,India,印度,IN,91,-2.3
+40440,Airtel,IN,India,印度,IN,91,-2.3
+40441,RPG,IN,India,印度,IN,91,-2.3
+40443,Hutch,IN,India,印度,IN,91,-2.3
+40444,Spice,IN,India,印度,IN,91,-2.3
+40445,Airtel,IN,India,印度,IN,91,-2.3
+40446,Hutch,IN,India,印度,IN,91,-2.3
+40449,Airtel,IN,India,印度,IN,91,-2.3
+40450,Reliance,IN,India,印度,IN,91,-2.3
+40451,Cellone,IN,India,印度,IN,91,-2.3
+40452,Reliance,IN,India,印度,IN,91,-2.3
+40453,Cellone,IN,India,印度,IN,91,-2.3
+40454,Cellone,IN,India,印度,IN,91,-2.3
+40455,Cellone,IN,India,印度,IN,91,-2.3
+40456,IDEA,IN,India,印度,IN,91,-2.3
+40457,Cellone,IN,India,印度,IN,91,-2.3
+40458,Cellone,IN,India,印度,IN,91,-2.3
+40459,Cellone,IN,India,印度,IN,91,-2.3
+40460,Hutch,IN,India,印度,IN,91,-2.3
+40462,Cellone,IN,India,印度,IN,91,-2.3
+40464,Cellone,IN,India,印度,IN,91,-2.3
+40466,Cellone,IN,India,印度,IN,91,-2.3
+40467,Reliance,IN,India,印度,IN,91,-2.3
+40468,DOLPHIN,IN,India,印度,IN,91,-2.3
+40469,MTNL,IN,India,印度,IN,91,-2.3
+40470,Airtel,IN,India,印度,IN,91,-2.3
+40471,Cellone,IN,India,印度,IN,91,-2.3
+40472,Cellone,IN,India,印度,IN,91,-2.3
+40473,Cellone,IN,India,印度,IN,91,-2.3
+40474,Cellone,IN,India,印度,IN,91,-2.3
+40475,Cellone,IN,India,印度,IN,91,-2.3
+40476,Cellone,IN,India,印度,IN,91,-2.3
+40477,Cellone,IN,India,印度,IN,91,-2.3
+40478,IDEA,IN,India,印度,IN,91,-2.3
+40479,Cellone,IN,India,印度,IN,91,-2.3
+40480,Cellone,IN,India,印度,IN,91,-2.3
+40481,Cellone,IN,India,印度,IN,91,-2.3
+40482,IDEA,IN,India,印度,IN,91,-2.3
+40483,Reliance,IN,India,印度,IN,91,-2.3
+40484,Hutch,IN,India,印度,IN,91,-2.3
+40485,Reliance,IN,India,印度,IN,91,-2.3
+40486,Hutch,IN,India,印度,IN,91,-2.3
+40487,IDEA,IN,India,印度,IN,91,-2.3
+40488,Hutch,IN,India,印度,IN,91,-2.3
+40489,IDEA,IN,India,印度,IN,91,-2.3
+40490,Airtel,IN,India,印度,IN,91,-2.3
+40492,Airtel,IN,India,印度,IN,91,-2.3
+40493,Airtel,IN,India,印度,IN,91,-2.3
+40494,Airtel,IN,India,印度,IN,91,-2.3
+40495,Airtel,IN,India,印度,IN,91,-2.3
+40496,Airtel,IN,India,印度,IN,91,-2.3
+40497,Airtel,IN,India,印度,IN,91,-2.3
+40498,Airtel,IN,India,印度,IN,91,-2.3
+40551,Airtel,IN,India,印度,IN,91,-2.3
+40552,Airtel,IN,India,印度,IN,91,-2.3
+40553,Airtel,IN,India,印度,IN,91,-2.3
+40554,Airtel,IN,India,印度,IN,91,-2.3
+40555,Airtel,IN,India,印度,IN,91,-2.3
+40556,Airtel,IN,India,印度,IN,91,-2.3
+40566,Hutch,IN,India,印度,IN,91,-2.3
+40567,Hutch,IN,India,印度,IN,91,-2.3
+41001,Mobilink,PK,Pakistan,巴基斯坦,PK,92,-2.3
+41302,DIALOG,LK,Sri Lanka,斯里兰卡,LK,94,0.0
+41303,CELLTEL,LK,Sri Lanka,斯里兰卡,LK,94,0.0
+41401,MM 900,MM,Burma,缅甸,MM,95,-1.3
+41501,Cellis,LB,Lebanon,黎巴嫩,LB,961,-6.0
+41503,LibanCell,LB,Lebanon,黎巴嫩,LB,961,-6.0
+41601,Fastlink,JO,Jordan,约旦,JO,962,-6.0
+41677,MobileCom,JO,Jordan,约旦,JO,962,-6.0
+41702,Spacetel,SY,Syria,叙利亚,SY,963,-6.0
+41709,MOBILE SYRIA,SY,Syria,叙利亚,SY,963,-6.0
+41902,MTCNet,KW,Kuwait,科威特,KW,965,-5.0
+41903,WATANIYA,KW,Kuwait,科威特,KW,965,-5.0
+42001,Al-Jawal,SA,Saudi Arabia,沙特阿拉伯,SA,966,-5.0
+42007,EAE,SA,Saudi Arabia,沙特阿拉伯,SA,966,-5.0
+42102,Spacetel,YE,Yemen,也门,YE,967,-5.0
+42202,OMAN MOBILE,OM,Oman,阿曼,OM,968,-4.0
+42402,ETISALAT,AE,United Arab Emirates,阿拉伯联合酋长国,AE,971,-4.0
+42501,Orange,IL,Israel,以色列,IL,972,-6.0
+42505,JAWWAL,IL,Israel,以色列,IL,972,-6.0
+42601,MOBILE PLUS,BH,Bahrain,巴林,BH,973,-5.0
+42701,QATARNET,QA,Qatar,卡塔尔,QA,974,-5.0
+42899,MobiCom,MN,Mongolia,蒙古,MN,976,0.0
+42901,NTC,NP,Nepal,尼泊尔,NP,977,-2.3
+43211,TCI,IR,Iran,伊朗,IR,98,-4.3
+43214,KISH,IR,Iran,伊朗,IR,98,-4.3
+43401,Buztel,UZ,Uzbekistan,乌兹别克斯坦,UZ,233,-5.0
+43402,Uzmacom,UZ,Uzbekistan,乌兹别克斯坦,UZ,233,-5.0
+43404,UZB DAEWOO-GSM,UZ,Uzbekistan,乌兹别克斯坦,UZ,233,-5.0
+43405,Coscom,UZ,Uzbekistan,乌兹别克斯坦,UZ,233,-5.0
+43701,BITEL,KG,Kyrgyzstan,吉尔吉斯坦,KG,331,-5.0
+43801,BCTI,TM,Turkmenistan,土库曼斯坦,TM,993,-5.0
+45201,MOBIFONE,VN,Vietnam,越南,VN,84,-1.0
+45202,VINAFONE,VN,Vietnam,越南,VN,84,-1.0
+45400,CSL,HK,Hongkong,香港,HK,852,0.0
+45401,NEW WORLD,HK,Hongkong,香港,HK,852,0.0
+45402,CSL,HK,Hongkong,香港,HK,852,0.0
+45404,Orange,HK,Hongkong,香港,HK,852,0.0
+45406,SMC,HK,Hongkong,香港,HK,852,0.0
+45410,NEW WORLD,HK,Hongkong,香港,HK,852,0.0
+45412,PEOPLES,HK,Hongkong,香港,HK,852,0.0
+45416,SUNDAY,HK,Hongkong,香港,HK,852,0.0
+45418,HK TELECOM,HK,Hongkong,香港,HK,852,0.0
+45601,MobiTel,KH,Kampuchea (Cambodia ),柬埔寨,KH,855,-1.0
+45602,SAMART-GSM,KH,Kampuchea (Cambodia ),柬埔寨,KH,855,-1.0
+45701,LAO GSM,LA,Laos,老挝,LA,856,-1.0
+46000,CHINA MOBILE,CN,China,中国,CN,86,0.0
+46001,CHN-CUGSM,CN,China,中国,CN,86,0.0
+46002,CHINA MOBILE,CN,China,中国,CN,86,0.0
+46003,CHINA TELECOM,CN,China,中国,CN,86,0.0
+46601,Far EasTone,TW,Taiwan,台湾省,TW,886,0.0
+46606,TUNTEX,TW,Taiwan,台湾省,TW,886,0.0
+46668,ACeS,TW,Taiwan,台湾省,TW,886,0.0
+46688,KGT,TW,Taiwan,台湾省,TW,886,0.0
+46692,Chunghwa,TW,Taiwan,台湾省,TW,886,0.0
+46693,MobiTai,TW,Taiwan,台湾省,TW,886,0.0
+46697,TWN GSM,TW,Taiwan,台湾省,TW,886,0.0
+46699,TransAsia,TW,Taiwan,台湾省,TW,886,0.0
+47001,GrameemPhone,BD,Bangladesh,孟加拉国,BD,880,-2.0
+47002,AKTEL,BD,Bangladesh,孟加拉国,BD,880,-2.0
+47003,ShebaWorld,BD,Bangladesh,孟加拉国,BD,880,-2.0
+47019,Mobile 2000,BD,Bangladesh,孟加拉国,BD,880,-2.0
+47201,DHIMOBILE,MV,Maldives,马尔代夫,MV,960,-7.0
+50212,Maxis Mobile,MY,Malaysia,马来西亚,MY,60,-0.5
+50213,TM Touch,MY,Malaysia,马来西亚,MY,60,-0.5
+50216,DiGi,MY,Malaysia,马来西亚,MY,60,-0.5
+50217,ADAM,MY,Malaysia,马来西亚,MY,60,-0.5
+50219,CELCOM,MY,Malaysia,马来西亚,MY,60,-0.5
+50501,MobileNet,AU,Australia,澳大利亚,AU,61,2.0
+50502,OPTUS,AU,Australia,澳大利亚,AU,61,2.0
+50503,Vodafone,AU,Australia,澳大利亚,AU,61,2.0
+50508,One.Tel,AU,Australia,澳大利亚,AU,61,2.0
+51000,ACeS,ID,Indonesia,印度尼西亚,ID,62,-0.3
+51001,SATELINDOCEL,ID,Indonesia,印度尼西亚,ID,62,-0.3
+51008,LIPPO TEL,ID,Indonesia,印度尼西亚,ID,62,-0.3
+51010,TELKOMSEL,ID,Indonesia,印度尼西亚,ID,62,-0.3
+51011,GSM-XL,ID,Indonesia,印度尼西亚,ID,62,-0.3
+51021,INDOSAT,ID,Indonesia,印度尼西亚,ID,62,-0.3
+51501,ISLACOM,PH,Philippines,菲律宾,PH,63,0.0
+51502,Globe,PH,Philippines,菲律宾,PH,63,0.0
+51503,SMART,PH,Philippines,菲律宾,PH,63,0.0
+51505,Digitel,PH,Philippines,菲律宾,PH,63,0.0
+51511,ACeS,PH,Philippines,菲律宾,PH,63,0.0
+52001,AIS GSM,TH,Thailand,泰国,TH,66,-1.0
+52015,ACT Mobile,TH,Thailand,泰国,TH,66,-1.0
+52018,WP-1800,TH,Thailand,泰国,TH,66,-1.0
+52020,ACeS,TH,Thailand,泰国,TH,66,-1.0
+52023,HELLO,TH,Thailand,泰国,TH,66,-1.0
+52099,Orange,TH,Thailand,泰国,TH,66,-1.0
+52501,ST-GSM-SGP,SG,Singapore,新加坡,SG,65,0.3
+52502,ST-GSM1800-SGP,SG,Singapore,新加坡,SG,65,0.3
+52503,M1-GSM-SGP,SG,Singapore,新加坡,SG,65,0.3
+52504,SGP-M1-3GSM,SG,Singapore,新加坡,SG,65,0.3
+52505,STARHUB-SGP,SG,Singapore,新加坡,SG,65,0.3
+52811,BRU TSTCom,BN,Brunei,文莱,BN,673,0.0
+53001,Vodafone,NZ,New Zealand,新西兰,NZ,64,4.0
+53901,Tonga Comm.,TO,Tonga,汤加,TO,676,4.0
+54201,Vodafone,FJ,Fiji,斐济,FJ,679,4.0
+54720,VINI,PF,French Polynesia,法属玻利尼西亚,PF,689,3.0
+60201,MobiNiL,EG,Egypt,埃及,EG,20,-6.0
+60202,CLICK GSM,EG,Egypt,埃及,EG,20,-6.0
+60301,AMN,DZ,Algeria,阿尔及利亚,DZ,213,-8.0
+60400,Meditel,MA,Morocco,摩洛哥,MA,212,-6.0
+60401,IAM,MA,Morocco,摩洛哥,MA,212,-6.0
+60502,TUNICELL,TN,Tunisia,突尼斯,TN,216,-7.0
+60801,ALIZE,SN,Senegal,塞内加尔,SN,221,-8.0
+60802,SENTEL,SN,Senegal,塞内加尔,SN,221,-8.0
+61001,MALITEL,ML,Mali,马里,ML,223,-8.0
+61101,MOBILIS,GN,Guinea,几内亚,GN,224,-8.0
+61102,LAGUI,GN,Guinea,几内亚,GN,224,-8.0
+61302,CELTEL,BF,Burkina-faso,布基纳法索,BF,226,-8.0
+61402,CELTEL,NE,Niger,尼日尔,NE,227,-8.0
+61501,TOGOCEL,TG,Togo,多哥,TG,228,-8.0
+61601,LIBERCOM,BJ,Benin,贝宁,BJ,229,-7.0
+61602,Telecel Benin,BJ,Benin,贝宁,BJ,229,-7.0
+61603,BENINCELL,BJ,Benin,贝宁,BJ,229,-7.0
+61701,CELLPLUS,MU,Mauritius,毛里求斯,MU,230,-4.0
+61710,EMTEL,MU,Mauritius,毛里求斯,MU,230,-4.0
+61801,Omega,LR,Liberia,利比里亚,LR,231,-8.0
+62001,SPACEFON,GH,Ghana,加纳,GH,233,-8.0
+62002,ONEtouch,GH,Ghana,加纳,GH,233,-8.0
+62003,MOBITEL,GH,Ghana,加纳,GH,233,-8.0
+62100,MTN,NG,Nigeria,尼日利亚,NG,234,-7.0
+62120,ECONET,NG,Nigeria,尼日利亚,NG,234,-7.0
+62130,MTN,NG,Nigeria,尼日利亚,NG,234,-7.0
+62140,NITEL GSM,NG,Nigeria,尼日利亚,NG,234,-7.0
+62201,CELTEL,TD,Chad,乍得,TD,235,-7.0
+62202,LIBERTIS,TD,Chad,乍得,TD,235,-7.0
+62401,MTN-CAM,CM,Cameroon,喀麦隆,CM,237,-7.0
+62402,MOBILIS,CM,Cameroon,喀麦隆,CM,237,-7.0
+62801,LIBERTIS,GA,Gabon,加蓬,GA,241,-7.0
+62802,GO Celtel,GA,Gabon,加蓬,GA,241,-7.0
+62803,CELTEL,GA,Gabon,加蓬,GA,241,-7.0
+62901,CELTEL,CG,Congo,刚果,CG,242,-7.0
+62910,LIBERTIS,CG,Congo,刚果,CG,242,-7.0
+63301,SEYCEL,SC,Seychelles,塞舌尔,SC,248,-4.0
+63310,AIRTEL,SC,Seychelles,塞舌尔,SC,248,-4.0
+63401,MobiTel,MZ,Mozambique,莫桑比克,MZ,258,-6.0
+63601,ETMTN,ET,Ethiopia,埃塞俄比亚,ET,251,-5.0
+63701,BARAKAAT,SO,Somali,索马里,SO,252,-5.0
+63902,Safaricom,KE,Kenya,肯尼亚,KE,254,-5.0
+63903,KENCELL,KE,Kenya,肯尼亚,KE,254,-5.0
+64001,TRITEL,TZ,Tanzania,坦桑尼亚,TZ,255,-5.0
+64002,MobiTel,TZ,Tanzania,坦桑尼亚,TZ,255,-5.0
+64003,ZANTEL,TZ,Tanzania,坦桑尼亚,TZ,255,-5.0
+64004,Vodacom,TZ,Tanzania,坦桑尼亚,TZ,255,-5.0
+64005,CELTEL,TZ,Tanzania,坦桑尼亚,TZ,255,-5.0
+64101,CelTel,UG,Uganda,乌干达,UG,256,-5.0
+64110,MTN-UGANDA,UG,Uganda,乌干达,UG,256,-5.0
+64111,UTL TELECEL,UG,Uganda,乌干达,UG,256,-5.0
+64201,Spacetel,BI,Burundi,布隆迪,BI,257,-6.0
+64202,SAFARIS,BI,Burundi,布隆迪,BI,257,-6.0
+64601,Madacom,MG,Madagascar,马达加斯加,MG,261,-5.0
+64602,ANTARIS,MG,Madagascar,马达加斯加,MG,261,-5.0
+64801,NET*ONE,ZW,Zimbabwe,津巴布韦,ZW,263,-6.0
+64803,TELECEL,ZW,Zimbabwe,津巴布韦,ZW,263,-6.0
+64804,ECONET,ZW,Zimbabwe,津巴布韦,ZW,263,-6.0
+64901,MTC,,Ascension,阿森松,,247,-8.0
+64901,MTC,,Cayman Is.,开曼群岛,,1345,-13.0
+64901,MTC,,Ivory Coast,科特迪瓦,,225,-6.0
+64901,MTC,,Mariana Is,马里亚那群岛,,1670,1.0
+64901,MTC,,Martinique,马提尼克,,596,-12.0
+64901,MTC,,Namibia,纳米比亚,,264,-7.0
+64901,MTC,,Netheriands Antilles,荷属安的列斯,,599,-12.0
+64901,MTC,,Reunion,留尼旺,,262,-4.0
+64901,MTC,,Samoa Eastern,东萨摩亚(美),,684,-19.0
+64901,MTC,,Samoa Western,西萨摩亚,,685,-19.0
+65001,CALLPOINT 90,MW,Malawi,马拉维,MW,265,-6.0
+65010,CelTel,MW,Malawi,马拉维,MW,265,-6.0
+65101,Vodacom,LS,Lesotho,莱索托,LS,266,-6.0
+65201,MASCOM,BW,Botswana,博茨瓦纳,BW,267,-6.0
+65202,VISTA,BW,Botswana,博茨瓦纳,BW,267,-6.0
+65310,SwaziMTN,SZ,Swaziland,斯威士兰,SZ,268,-6.0
+65501,Vodacom,ZA,South Africa,南非,ZA,27,-6.0
+65507,Cell C (Pty) Ltd,ZA,South Africa,南非,ZA,27,-6.0
+65510,MTN,ZA,South Africa,南非,ZA,27,-6.0
+70601,PERSONAL,SV,EI Salvador,萨尔瓦多,SV,503,-14.0
+70602,DIGICEL,SV,EI Salvador,萨尔瓦多,SV,503,-14.0
+71610,TIM,PE,Peru,秘鲁,PE,51,-13.0
+72207,UNIFON,AR,Argentina,阿根廷,AR,54,-11.0
+72234,Telecom Personal,AR,Argentina,阿根廷,AR,54,-11.0
+72235,PORT-HABLE,AR,Argentina,阿根廷,AR,54,-11.0
+72402,TIM BRASIL,BR,Brazil,巴西,BR,55,-11.0
+72403,TIM BRASIL,BR,Brazil,巴西,BR,55,-11.0
+72404,TIM BRASIL,BR,Brazil,巴西,BR,55,-11.0
+72405,Claro,BR,Brazil,巴西,BR,55,-11.0
+72416,BrTCel,BR,Brazil,巴西,BR,55,-11.0
+73001,ENTEL PCS,CL,Chile,智利,CL,56,-13.0
+73010,ENTEL PCS,CL,Chile,智利,CL,56,-13.0
+73401,INFONET,VE,Venezuela,委内瑞拉,VE,58,-12.3
+73402,DIGITEL,VE,Venezuela,委内瑞拉,VE,58,-12.3
+73601,NUEVATEL,BO,Bolivia,玻利维亚,BO,591,-12.0
+73602,ENTEL,BO,Bolivia,玻利维亚,BO,591,-12.0
+74401,VOX,PY,Paraguay,巴拉圭,PY,595,-12.0
+74402,PY 02,PY,Paraguay,巴拉圭,PY,595,-12.0
+74601,ICMS,SR,Suriname,苏里南,SR,597,-11.3

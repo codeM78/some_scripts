@@ -1,0 +1,12 @@
+前情提示：
+刷视频只需要执行videoHelper.py即可
+已经顺利修改为zzuers能用的了
+前提是电脑登录雨课堂网站
+然后进行一些值得修改---csrftoken和sessionid
+
+homeworkHelper.py是刷课后题得脚本。也已经改为zzuer研究生可以直接使用
+但是该脚本已经暴毙，顺利执行也无多大作用了。还要老老实实自己刷题
+
+zzu研究生们！
+csrftoken和sessionid改为自己
+然后直接执行videoHelper.py。按照操作进行刷课即可

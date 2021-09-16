@@ -1,0 +1,205 @@
+[
+    {
+       "value": 55,
+        "name": "郑州市",
+        "path": "郑州市",
+        "children": [
+            {
+                "value":12.5 ,
+                "name": "新郑市",
+                "path": "郑州市/新郑市",
+                "children": [
+                    {
+                        "value":3.5,
+                        "name": "龙湖镇",
+                        "path": "郑州市/新郑市/龙湖镇",
+						"children": [
+							{
+								"value":1 ,
+								"name": "龙湖一品小区",
+								"path": "郑州市/新郑市/龙湖镇/龙湖一品小区"
+							},
+							{
+								"value":2.5 ,
+								"name": "学府花园小区",
+								"path": "郑州市/新郑市/龙湖镇/学府花园小区"
+							}
+						]
+                    },
+                    {
+                        "value":3,
+                        "name": "新建路街道",
+                        "path": "郑州市/新郑市/新建路街道"
+                    },
+                    {
+                        "value":3 ,
+                        "name": "新华路街道",
+                        "path": "郑州市/新郑市/新华路街道"
+                    },
+                    {
+                        "value":3 ,
+                        "name": "孟庄镇",
+                        "path": "郑州市/新郑市/孟庄镇"
+                    }
+                ]
+            },
+            {
+                "value": 30,
+                "name": "金水区",
+                "path": "郑州市/金水区",
+                "children": [
+                    {
+                        "value":10 ,
+                        "name": "文化路街道办事处",
+                        "path": "郑州市/金水区/文化路街道办事处",
+						"children": [
+							{
+								"value":5 ,
+								"name": "工学院社区",
+								"path": "郑州市/金水区/文化路街道办事处/工学院社区"
+							},
+								{
+								"value":3 ,
+								"name": "工学院社区2",
+								"path": "郑州市/金水区/文化路街道办事处/工学院社区2"
+							},
+								{
+								"value":2 ,
+								"name": "工学院社区3",
+								"path": "郑州市/金水区/文化路街道办事处/工学院社区3"
+							}
+						]
+                    },
+                    {
+                        "value":5 ,
+                        "name": "南阳新村街道办事处",
+                        "path": "郑州市/金水区/南阳新村街道办事处"
+                    },
+                    {
+                        "value":7 ,
+                        "name": "经八路街道办事处",
+                        "path": "郑州市/金水区/经八路街道办事处"
+                    },
+                    {
+                        "value":4 ,
+                        "name": "大石桥街道办事处",
+                        "path": "郑州市/金水区/大石桥街道办事处"
+                    },
+                    {
+                        "value":4 ,
+                        "name": "人民路街道办事处",
+                        "path": "郑州市/金水区/人民路街道办事处"
+                    }
+                ]
+            },
+            {
+                "value":12.5 ,
+                "name": "二七区",
+                "path": "郑州市/二七区",
+                "children": [
+                    {
+                        "value":12.5 ,
+                        "name": "大学路街道办事处",
+                        "path": "郑州市/二七区/大学路街道办事处",
+						"children": [
+							{
+								"value":2.5 ,
+								"name": "幸福路九号院",
+								"path": "郑州市/二七区/大学路街道办事处/幸福路九号院"
+							},
+							{
+								"value":10 ,
+								"name": "南铁英社区",
+								"path": "郑州市/二七区/大学路街道办事处/南铁英社区"
+							}
+                          ]
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+    "value": 40,
+    "name": "Accessibility",
+    "path": "Accessibility"
+  },
+    {
+    "value": 180,
+    "name": "Accounts",
+    "path": "Accounts",
+    "children": [
+      {
+        "value": 76,
+        "name": "Access",
+        "path": "Accounts/Access",
+        "children": [
+          {
+            "value": 12,
+            "name": "DefaultAccessPlugin.bundle",
+            "path": "Accounts/Access/DefaultAccessPlugin.bundle"
+          },
+          {
+            "value": 28,
+            "name": "FacebookAccessPlugin.bundle",
+            "path": "Accounts/Access/FacebookAccessPlugin.bundle"
+          },
+          {
+            "value": 20,
+            "name": "LinkedInAccessPlugin.bundle",
+            "path": "Accounts/Access/LinkedInAccessPlugin.bundle"
+          },
+          {
+            "value": 16,
+            "name": "TencentWeiboAccessPlugin.bundle",
+            "path": "Accounts/Access/TencentWeiboAccessPlugin.bundle"
+          }
+        ]
+      },
+      {
+        "value": 92,
+        "name": "Authentication",
+        "path": "Accounts/Authentication",
+        "children": [
+          {
+            "value": 24,
+            "name": "FacebookAuthenticationPlugin.bundle",
+            "path": "Accounts/Authentication/FacebookAuthenticationPlugin.bundle"
+          },
+          {
+            "value": 16,
+            "name": "LinkedInAuthenticationPlugin.bundle",
+            "path": "Accounts/Authentication/LinkedInAuthenticationPlugin.bundle"
+          },
+          {
+            "value": 20,
+            "name": "TencentWeiboAuthenticationPlugin.bundle",
+            "path": "Accounts/Authentication/TencentWeiboAuthenticationPlugin.bundle"
+          },
+          {
+            "value": 16,
+            "name": "TwitterAuthenticationPlugin.bundle",
+            "path": "Accounts/Authentication/TwitterAuthenticationPlugin.bundle"
+          },
+          {
+            "value": 16,
+            "name": "WeiboAuthenticationPlugin.bundle",
+            "path": "Accounts/Authentication/WeiboAuthenticationPlugin.bundle"
+          }
+        ]
+      },
+      {
+        "value": 12,
+        "name": "Notification",
+        "path": "Accounts/Notification",
+        "children": [
+          {
+            "value": 12,
+            "name": "SPAAccountsNotificationPlugin.bundle",
+            "path": "Accounts/Notification/SPAAccountsNotificationPlugin.bundle"
+          }
+        ]
+      }
+    ]
+  }
+]

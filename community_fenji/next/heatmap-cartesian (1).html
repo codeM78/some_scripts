@@ -1,0 +1,126 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=heatmap-cartesian
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+var hours = ['1单元', '1单元', '2单元', '2单元', '3单元', '3单元', '4单元',
+        '4单元', '5单元', '5单元',];
+var days = ['1楼', '2楼', '3楼',
+        '4楼', '5楼', '6楼', '7楼','8楼'];
+
+var data = [[0,0,5],[0,1,0],[0,2,3],[0,3,0],[0,4,3],[0,5,5],[0,6,5],[0,7,3],
+            [1,0,2],[1,1,5],[1,2,1],[1,3,5],[1,4,1],[1,5,2],[1,6,2],[1,7,4],
+            [2,0,1],[2,1,3],[2,2,0],[2,3,3],[2,4,7],[2,5,4],[2,6,5],[2,7,4],
+            [3,0,5],[3,1,4],[3,2,4],[3,3,0],[3,4,1],[3,5,7],[3,6,0],[3,7,1],
+            [4,0,2],[4,1,1],[4,2,8],[4,3,4],[4,4,2],[4,5,6],[4,6,2],[4,7,5],
+            [5,0,5],[5,1,0],[5,2,1],[5,3,5],[5,4,5],[5,5,2],[5,6,3],[5,7,1],
+            [6,0,3],[6,1,6],[6,2,3],[6,3,5],[6,4,4],[6,5,3],[6,6,1],[6,7,2],
+            [7,0,3],[7,1,3],[7,2,5],[7,3,6],[7,4,5],[7,5,3],[7,6,4],[7,7,1],
+            [8,0,2],[8,1,7],[8,2,1],[8,3,5],[8,4,0],[8,5,5],[8,6,1],[8,7,3],
+            [9,0,5],[9,1,2],[9,2,7],[9,3,2],[9,4,5],[9,5,2],[9,6,5],[9,7,4],
+            
+            ]
+data = data.map(function (item) {
+    return [item[0], item[1], item[2] || '-'];
+});
+
+option = {
+    
+    title:{
+        text:'本社区该楼栋核酸检测情况',
+        textStyle:{
+            color:'red'
+        },
+         left:'center',
+         top:20
+
+    },
+    tooltip: {
+        position: 'top',
+        formatter:'核酸检测已检测人数'
+    },
+     grid: {
+        height: '50%',
+        top: '10%'
+    },
+
+    xAxis: {
+        type: 'category',
+        data: hours,
+        splitArea: {
+            show: true,
+        }
+    },
+    yAxis: {
+        type: 'category',
+        data: days,
+        splitArea: {
+            show: true
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 10,
+        calculable: true,
+        orient: 'horizontal',
+        left: 'center',
+        bottom: '20%'
+    },
+    series: [{
+        name: '核酸检测人数',
+        type: 'heatmap',
+        data: data,
+        label: {
+            show: true
+        },
+        emphasis: {
+            itemStyle: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    }]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    

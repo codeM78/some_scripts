@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旭日图</title>
+	<!-- 引入echarts库文件 -->
+    <script src="static/echarts.min.js"></script>
+    <!-- 引入jquery库文件 -->
+    <script src="static/jquery.js"></script>
+
+
+</head>
+<body>
+	<!-- 定义图表现实区域 -->
+    <div id="main" style="width:1380px; height: 620px"></div>
+	<script type="text/javascript">
+		<!-- 初始化echarts对象 -->
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        // var data = [{
+        //     name: 'Grandpa',
+        //     children: [{
+        //         name: 'Uncle Leo',
+        //         value: 15,
+        //         children: [{
+        //             name: 'Cousin Jack',
+        //             value: 2
+        //         }, {
+        //             name: 'Cousin Mary',
+        //             value: 5,
+        //             children: [{
+        //                 name: 'Jackson',
+        //                 value: 2
+        //             }]
+        //         }, {
+        //             name: 'Cousin Ben',
+        //             value: 4
+        //         }]
+        //     }, {
+        //         name: 'Aunt Jane',
+        //         children: [{
+        //             name: 'Cousin Kate',
+        //             value: 4
+        //         }]
+        //     }, {
+        //         name: 'Father',
+        //         value: 10,
+        //         children: [{
+        //             name: 'Me',
+        //             value: 5,
+        //             itemStyle: {
+        //                 color: 'red'
+        //             }
+        //         }, {
+        //             name: 'Brother Peter',
+        //             value: 1
+        //         }]
+        //     }]
+        // }, {
+        //     name: 'Mike',
+        //     children: [{
+        //         name: 'Uncle Dan',
+        //         children: [{
+        //             name: 'Cousin Lucy',
+        //             value: 3
+        //         }, {
+        //             name: 'Cousin Luck',
+        //             value: 4,
+        //             children: [{
+        //                 name: 'Nephew',
+        //                 value: 2
+        //             }]
+        //         }]
+        //     }]
+        // }, {
+        //     name: 'Nancy',
+        //     children: [{
+        //         name: 'Uncle Nike',
+        //         children: [{
+        //             name: 'Cousin Betty',
+        //             value: 1
+        //         }, {
+        //             name: 'Cousin Jenny',
+        //             value: 2
+        //         }]
+        //     }]
+        // }];
+
+        myChart.showLoading();
+        $.get('files/data_demo3.json', function (ZhengzhouData){
+            myChart.hideLoading();
+        // $.get('files/data_demo3.json').done(function(data){
+            myChart.setOption(option = {
+
+                title: {
+                    text: '郑州市',
+                    left: 'center'
+                },
+
+                visualMap: {
+                    type: 'continuous',
+                    min: 0,
+                    max: 10,
+                    inRange: {
+                        color: [
+
+                            "#ac6767",
+                            "#1d953f",
+                            "#6950a1",
+                            "#918597"
+                        ]
+                    }
+                },
+
+                series: [{
+                    type: 'sunburst',
+                    data: ZhengzhouData,
+                    radius: [0, '90%'],
+                    label: {
+                        rotate: 'radial'
+                    }
+                }]
+
+            });
+
+        });
+
+        // option = {
+        //     visualMap: {
+        //         type: 'continuous',
+        //         min: 0,
+        //         max: 10,
+        //         inRange: {
+        //             color: ['#2F93C8', '#AEC48F', '#FFDB5C', '#F98862']
+        //         }
+        //     },
+        //     series: {
+        //         type: 'sunburst',
+        //         data: data,
+        //         radius: [0, '90%'],
+        //         label: {
+        //             rotate: 'radial'
+        //         }
+        //     }
+        // };
+
+        option && myChart.setOption(option);
+
+    </script>
+</body>
+</html>
