@@ -9,7 +9,7 @@ def mail(mail_text, mail_to):
     msg = MIMEText(mail_text)
 
     # set the mail info
-    msg['Subject'] = "每日健康打卡通知"
+    msg['Subject'] = "每日健康打卡通知" #主题
     msg['From'] = MAIL_USER
     msg['To'] = mail_to
 

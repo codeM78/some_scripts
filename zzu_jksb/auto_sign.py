@@ -11,21 +11,30 @@ import mail
 
 # 驱动路径
 driver_path = "../zhengzhou_community/chromedriver.exe"
-# 伪装 User-Agent--使用驱动自带伪装头，当然也可以自己设置
+
+# 伪装 User-Agent--使用驱动自带伪装头，当然也可以自己设置(设置与否都行)
+# 更换头部  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 Edg/92.0.902.73"
+user_agent = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 Edg/92.0.902.73"
+)
+
 
 def sign_in(uid, pwd):
 
     # set to no-window
     chrome_options = Options()
+    # 不打开窗口设置
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
+    # 伪装头部--可注释
+    chrome_options.add_argument('user-agent=%s'%user_agent)
 
     # simulate a browser to open the website
     browser = webdriver.Chrome(options=chrome_options
                                 #这里记得配置自己的浏览器驱动
                                ,executable_path=driver_path)
     # browser = webdriver.Chrome()
-    # 连接被浏览器提示为不安全，添加白名单即可
+    # 连接被浏览器提示为不安全，浏览器添加白名单即可
     browser.get("https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/first0")
 
     # input uid and password
@@ -41,6 +50,7 @@ def sign_in(uid, pwd):
             end = time.time()
             break
         except:
+            # 频繁访问就会定位不到元素
             print("还未定位到元素!")
     print('定位耗费时间：'+str(end-start))
 
@@ -54,7 +64,7 @@ def sign_in(uid, pwd):
 
     print("Checking whether User {0} has signed in".format(uid))
     msg = browser.find_element_by_xpath("//*[@id='bak_0']/div[7]/span").text
-    # 如果今日填报郭就退出填报，直接返回msg
+    # 如果今日填报过就退出填报，直接返回msg
     if msg == "今日您已经填报过了":
         return msg
 
@@ -97,7 +107,8 @@ if __name__ == "__main__":
     # # 发送邮件信息
     mail.mail(msg, MAIL_TO)
 
-    # For Multiple Users
+    # # For Multiple Users  多用户打卡
+    # # 设置了定时，但是需要一直开启服务--一直后台运行。（不建议）不如直接设置定时计划
     # while True:
     #     while True:
     #         now = datetime.datetime.now()
