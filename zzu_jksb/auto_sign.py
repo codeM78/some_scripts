@@ -7,6 +7,11 @@ from selenium.webdriver.chrome.options import Options
 from private_info import *
 import mail
 
+'''可以写个log日志，获取日志信息--有空再说吧'''
+
+# 驱动路径
+driver_path = "../zhengzhou_community/chromedriver.exe"
+# 伪装 User-Agent--使用驱动自带伪装头，当然也可以自己设置
 
 def sign_in(uid, pwd):
 
@@ -18,7 +23,7 @@ def sign_in(uid, pwd):
     # simulate a browser to open the website
     browser = webdriver.Chrome(options=chrome_options
                                 #这里记得配置自己的浏览器驱动
-                               ,executable_path="../zhengzhou_community/chromedriver.exe")
+                               ,executable_path=driver_path)
     # browser = webdriver.Chrome()
     # 连接被浏览器提示为不安全，添加白名单即可
     browser.get("https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/first0")
@@ -26,13 +31,13 @@ def sign_in(uid, pwd):
     # input uid and password
     # //*[@id="mt_5"]/div[2]/div[3]/input  //*[@id="mt_5"]/div[3]/div[3]/input
     print("Inputting the UID and Password of User {0}".format(uid))
-    # 半夜12点多进不去了--（不知道由于什么原因），可能定位不到，加个轮询和异常处理--依旧是不行。这种爬取网站的时候有延时风险
+    # 进不去了--（可能测试的时候频繁访问被检测了），定位不到，加个轮询和异常处理--缓解一下。
     while 1:
         start = time.time()
         try:
             browser.find_element_by_xpath('//*[@id="mt_5"]/div[2]/div[3]/input').send_keys(uid)
             browser.find_element_by_xpath('//*[@id="mt_5"]/div[3]/div[3]/input').send_keys(pwd)
-            print('已定位到元素')
+            print('------元素已定位------')
             end = time.time()
             break
         except:
@@ -40,12 +45,10 @@ def sign_in(uid, pwd):
     print('定位耗费时间：'+str(end-start))
 
     # click to sign in  点击登录
-    # //*[@id="mt_5"]/div[5]/div/input
-
     browser.find_element_by_xpath("//*[@id='mt_5']/div[5]/div/input").click()
     time.sleep(3)
 
-    # get middle info
+    # get middle info 定位iframe并使用get请求到信息
     real_mid_page_url = browser.find_element_by_xpath("//*[@id='zzj_top_6s']").get_attribute("src")
     browser.get(real_mid_page_url)
 
@@ -55,23 +58,7 @@ def sign_in(uid, pwd):
     if msg == "今日您已经填报过了":
         return msg
 
-    # click to fill in
-    # # 适配填报健康码绿码和疫苗接种两针，其实不做新的适配也能’伪‘打卡--打卡成功（虽然信息提示失败）
-    # # 健康码绿码--
-    # # 1.点击候选框
-    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/select[1]').click()
-    # time.sleep(1)
-    # # 2.点击绿码
-    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/select[1]/option[2]').click()
-    #
-    # # 疫苗接种两针
-    # # 1.点击选框
-    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[2]/select/option[3]').click()
-    # time.sleep(1)
-    # # 2.点击两针接种
-    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[2]/select/option[3]').click()
-
-    # 点击填报
+    # 点击本人填报
     span_text = browser.find_element_by_xpath("//*[@id='bak_0']/div[13]/div[3]/div[4]/span").text
     if span_text == "本人填报":
         browser.find_element_by_xpath("//*[@id='bak_0']/div[13]/div[3]/div[4]").click()
@@ -80,11 +67,18 @@ def sign_in(uid, pwd):
 
     time.sleep(2)
 
-    # click to submit
+    # click to fill in 填充表格
+    # 适配填报健康码绿码和疫苗接种两针，其实不做新的适配也能’伪‘打卡--打卡成功（虽然信息提示失败）
+    # 健康码绿码
+    browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/select[1]/option[2]').click()
+    time.sleep(1)
+    # 疫苗接种两针
+    browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[2]/select/option[3]').click()
+
+
+    # click to submit  提交表格
     print("Signing in for User {0}".format(uid))
-    # 这里定位不对了又  //*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[6]/div[4]/span
     browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[6]/div[4]/span').click()
-    # browser.find_element_by_xpath("//*[@id='bak_0']/div[19]/div[4]").click()
     time.sleep(2)
 
     final_text = browser.find_element_by_xpath("//*[@id='bak_0']/div[2]/div[2]/div[2]/div[2]").text
