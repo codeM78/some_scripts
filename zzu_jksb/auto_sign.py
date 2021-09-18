@@ -26,7 +26,7 @@ def sign_in(uid, pwd):
     # input uid and password
     # //*[@id="mt_5"]/div[2]/div[3]/input  //*[@id="mt_5"]/div[3]/div[3]/input
     print("Inputting the UID and Password of User {0}".format(uid))
-    # 这一会进不去了--由于网速原因，可能定位不到，加个轮询和异常处理--依旧是不行。这种爬取网站的时候有延时风险
+    # 半夜12点多进不去了--（不知道由于什么原因），可能定位不到，加个轮询和异常处理--依旧是不行。这种爬取网站的时候有延时风险
     while 1:
         start = time.time()
         try:
@@ -50,23 +50,28 @@ def sign_in(uid, pwd):
     browser.get(real_mid_page_url)
 
     print("Checking whether User {0} has signed in".format(uid))
-    # msg = browser.find_element_by_xpath("//*[@id='bak_0']/div[7]/span").text
-    # if msg == "今日您已经填报过了":
-    #     return msg
+    msg = browser.find_element_by_xpath("//*[@id='bak_0']/div[7]/span").text
+    # 如果今日填报郭就退出填报，直接返回msg
+    if msg == "今日您已经填报过了":
+        return msg
 
     # click to fill in
-    # 适配填报健康码绿码和疫苗接种两针，其实不做新的适配也能’伪‘打卡--打卡成功
-    # 健康码绿码
-    time.sleep(1)
-    # hc = browser.find_element_by_tag_name('option')[2]
-    hc = browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/select[1]/option[2]').text
+    # # 适配填报健康码绿码和疫苗接种两针，其实不做新的适配也能’伪‘打卡--打卡成功（虽然信息提示失败）
+    # # 健康码绿码--
+    # # 1.点击候选框
+    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/select[1]').click()
+    # time.sleep(1)
+    # # 2.点击绿码
+    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/select[1]/option[2]').click()
+    #
+    # # 疫苗接种两针
+    # # 1.点击选框
+    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[2]/select/option[3]').click()
+    # time.sleep(1)
+    # # 2.点击两针接种
+    # browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[2]/select/option[3]').click()
 
-    # 疫苗接种两针
-    time.sleep(1)
-    # ym = browser.find_element_by_tag_name('option')[6]
-    ym = browser.find_element_by_xpath('//*[@id="bak_0"]/div[8]/div[2]/div[2]/div[2]/div[2]/select/option[3]').text
-
-    点击填报
+    # 点击填报
     span_text = browser.find_element_by_xpath("//*[@id='bak_0']/div[13]/div[3]/div[4]/span").text
     if span_text == "本人填报":
         browser.find_element_by_xpath("//*[@id='bak_0']/div[13]/div[3]/div[4]").click()
