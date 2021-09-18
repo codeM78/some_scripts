@@ -610,6 +610,162 @@ def main2():
         print(player.name, end=': ')
         print(player.cards)
 
+'''
+面向对象设计原则:
+单一职责原则 （SRP）- 一个类只做该做的事情（类的设计要高内聚）
+开闭原则 （OCP）- 软件实体应该对扩展开发对修改关闭
+依赖倒转原则（DIP）- 面向抽象编程（在弱类型语言中已经被弱化）
+里氏替换原则（LSP） - 任何时候可以用子类对象替换掉父类对象
+接口隔离原则（ISP）- 接口要小而专不要大而全（Python中没有接口的概念）
+合成聚合复用原则（CARP） - 优先使用强关联关系而不是继承关系复用代码
+最少知识原则（迪米特法则，LoD）- 不要给没有必然联系的对象发消息
+说明：12457放在一起称为面向对象的SOLID原则。
+'''
+
+'''
+GoF设计模式:
+创建型模式：单例、工厂、建造者、原型
+结构型模式：适配器、门面（外观）、代理
+行为型模式：迭代器、观察者、状态、策略
+'''
+
+# 生成器是语法简化版的迭代器。
+def fib(num):
+    """生成器"""
+    a, b = 0, 1
+    for _ in range(num):
+        a, b = b, a + b
+        yield a
+
+# 生成器进化为协程。->协程简单的说就是可以相互协作的子程序
+def calc_avg():
+    """流式计算平均值"""
+    total, counter = 0, 0
+    avg_value = None
+    while True:
+        value = yield avg_value
+        total, counter = total + value, counter + 1
+        avg_value = total / counter
+
+'''
+重点：多线程和多进程的比较。
+
+以下情况需要使用多线程：
+程序需要维护许多共享的状态（尤其是可变状态），Python中的列表、字典、集合都是线程安全的，所以使用线程而不是进程维护共享状态的代价相对较小。
+程序会花费大量时间在I/O操作上，没有太多并行计算的需求且不需占用太多的内存。
+
+以下情况需要使用多进程：
+程序执行计算密集型任务（如：字节码操作、数据处理、科学计算）。
+程序的输入可以并行的分成块，并且可以将运算结果合并。
+程序在内存使用方面没有任何限制且不强依赖于I/O操作（如：读写文件、套接字等）。
+'''
+
+'''
+异步处理：从调度程序的任务队列中挑选任务，该调度程序以交叉的形式执行这些任务，
+我们并不能保证任务将以某种顺序去执行，因为执行顺序取决于队列中的一项任务是否愿意将CPU处理时间让位给另一项任务。
+异步任务通常通过多任务协作处理的方式来实现，由于执行时间和顺序的不确定，
+因此需要通过回调式编程或者future对象来获取任务执行的结果。
+Python 3通过asyncio模块和await和async关键字（在Python 3.7中正式被列为关键字）来支持异步处理。
+'''
+"""
+异步I/O - async / await
+"""
+import asyncio
+
+
+def num_generator(m, n):
+    """指定范围的数字生成器"""
+    yield from range(m, n + 1)
+
+
+async def prime_filter(m, n):
+    """素数过滤器"""
+    primes = []
+    for i in num_generator(m, n):
+        flag = True
+        for j in range(2, int(i ** 0.5 + 1)):
+            if i % j == 0:
+                flag = False
+                break
+        if flag:
+            print('Prime =>', i)
+            primes.append(i)
+
+        await asyncio.sleep(0.001)
+    return tuple(primes)
+
+
+async def square_mapper(m, n):
+    """平方映射器"""
+    squares = []
+    for i in num_generator(m, n):
+        print('Square =>', i * i)
+        squares.append(i * i)
+
+        await asyncio.sleep(0.001)
+    return squares
+
+
+def main3():
+    """主函数"""
+    loop = asyncio.get_event_loop()
+    future = asyncio.gather(prime_filter(2, 100), square_mapper(1, 100))
+    future.add_done_callback(lambda x: print(x.result()))
+    loop.run_until_complete(future)
+    loop.close()
+# 说明：上面的代码使用get_event_loop函数获得系统默认的事件循环，
+# 通过gather函数可以获得一个future对象，future对象的add_done_callback可以添加执行完成时的回调函数，
+# loop对象的run_until_complete方法可以等待通过future对象获得协程执行结果。
+
+# 异步的从5个URL中获取页面并通过正则表达式的命名捕获组提取了网站的标题。
+import asyncio
+import re
+
+import aiohttp
+
+PATTERN = re.compile(r'\<title\>(?P<title>.*)\<\/title\>')
+
+
+async def fetch_page(session, url):
+    async with session.get(url, ssl=False) as resp:
+        return await resp.text()
+
+
+async def show_title(url):
+    async with aiohttp.ClientSession() as session:
+        html = await fetch_page(session, url)
+        print(PATTERN.search(html).group('title'))
+
+
+def main4(): #异步获取网站标题
+    urls = ('https://www.python.org/', # Welcome to Python.org
+            'https://git-scm.com/',    # Git
+            'https://www.jd.com/',     # 京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！
+            'https://www.taobao.com/', # 淘宝网 - 淘！我喜欢
+            'https://www.douban.com/') # 豆瓣
+    loop = asyncio.get_event_loop()
+    cos = [show_title(url) for url in urls]  # 异步输出就不是严格按照网站列表下标顺序输出了
+    loop.run_until_complete(asyncio.wait(cos))
+    loop.close()
+
+'''
+重点：异步I/O与多进程的比较。
+
+当程序不需要真正的并发性或并行性，而是更多的依赖于异步处理和回调时，asyncio就是一种很好的选择。
+如果程序中有大量的等待与休眠时，也应该考虑asyncio，它很适合编写没有实时数据处理需求的Web应用服务器。
+
+
+Python还有很多用于处理并行任务的三方库，例如：joblib、PyMP等。
+实际开发中，要提升系统的可扩展性和并发性通常有垂直扩展（增加单个节点的处理能力）和水平扩展（将单个节点变成多个节点）两种做法。
+可以通过消息队列来实现应用程序的解耦合，消息队列相当于是多线程同步队列的扩展版本，不同机器上的应用程序相当于就是线程，
+而共享的分布式消息队列就是原来程序中的Queue。消息队列（面向消息的中间件）的最流行和最标准化的实现是AMQP（高级消息队列协议），
+AMQP源于金融行业，提供了排队、路由、可靠传输、安全等功能，最著名的实现包括：Apache的ActiveMQ、RabbitMQ等。
+
+
+要实现任务的异步化，可以使用名为Celery的三方库。Celery是Python编写的分布式任务队列，
+它使用分布式消息进行工作，可以基于RabbitMQ或Redis来作为后端的消息代理。
+'''
+
 if __name__ == '__main__':
     item1 = [34,342,234,2,5,46,32,53]
     item2 = [3,32,34,21,65,456,132,30]
@@ -642,7 +798,25 @@ if __name__ == '__main__':
     #类的封装、继承和多态
     # main1()
     # 类与类之间的关系
-    main2()
+    # main2()
+
+    # yield返回的是迭代器
+    # x = fib(5)
+    # print(x)
+    # print(type(x))
+    # print([*x])
+
+    # 生成器进化为协程。->协程简单的说就是可以相互协作的子程序
+    # gen = calc_avg()
+    # next(gen)
+    # print(gen.send(10))
+    # print(gen.send(20))
+    # print(gen.send(30))
+
+    # 还有多进程解决python GIL 全局锁问题  多进程  线程池详细看源代码
+
+    # main3()
+    main4()
 
 
 
