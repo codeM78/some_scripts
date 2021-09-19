@@ -1,4 +1,5 @@
-# gitStudy
+# someScripts
+
 
 #### 介绍
 一些脚本
